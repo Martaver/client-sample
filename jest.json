@@ -1,0 +1,17 @@
+{
+  "automock": false,
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "transform": {
+    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+  "notify": false,
+  "verbose": true,
+  "globals": {
+    "__TS_CONFIG__": "<rootDir>/scripts/tsconfig.json"
+  }
+}
