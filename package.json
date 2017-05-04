@@ -20,9 +20,7 @@
     "lint": "tslint --project src/tsconfig.json",
     "test": "jest --config jest.json",
     "test:nocache": "jest --config jest.json --no-cache",
-    "test:update": "jest --config jest.json -u",
-    "precommit": "yarn run lint",
-    "prepush": "yarn run tsc & yarn run test",
+    "test:update": "jest --config jest.json -u",    
     "deploy:init": "git clone https://github.com/piotrwitek/react-currency-converter --branch gh-pages dist",
     "deploy": "git checkout gh-pages && cd dist && git add --all && git commit -m \"New Release\" && git push"
   },

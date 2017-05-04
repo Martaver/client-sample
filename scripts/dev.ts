@@ -1,5 +1,5 @@
 import { rm, cp, mkdir } from 'shelljs';
-import { FuseBox, CSSPlugin, SassPlugin, SVGPlugin, CSSModules } from 'fuse-box';
+import { FuseBox, CSSPlugin, SassPlugin, ImageBase64Plugin, CSSModules } from 'fuse-box';
 
 // paths
 const SRC_PATH = 'src/';
@@ -18,7 +18,7 @@ let fuse = new FuseBox({
   output: '../'+BUILD_PATH+"$name.js",  
   sourceMaps: true,  
   plugins: [
-    SVGPlugin(),        
+    ImageBase64Plugin(),    
     [SassPlugin(), CSSModules(), CSSPlugin()]
   ]
 })
