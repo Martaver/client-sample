@@ -1,5 +1,5 @@
-import { rm, cp, mkdir } from 'shelljs';
-import { FuseBox, UglifyJSPlugin, EnvPlugin } from 'fuse-box';
+import { EnvPlugin, FuseBox, UglifyJSPlugin } from 'fuse-box';
+import { cp, mkdir, rm } from 'shelljs';
 
 // dependencies
 // tslint:disable-next-line:no-var-requires
@@ -22,7 +22,6 @@ cp('-rf', 'assets/*', BUILD_PATH);
 FuseBox.init({
   homeDir: SRC_PATH,
   tsConfig: SRC_PATH + 'tsconfig.json',
-  outFile: BUILD_PATH + 'app.js',
   sourceMaps: true,
   log: false,
   plugins: [

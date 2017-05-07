@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import styles from './CoreLayout.scss';
 
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
@@ -7,6 +6,4 @@ export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
     <h1 className={styles.clr}>Testing Corez Layout</h1>
     {children}
   </div>
-)
-
-export default CoreLayout;
+);
