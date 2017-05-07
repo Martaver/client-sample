@@ -148,10 +148,6 @@
       true,
       1000
     ],
-    "max-line-length": [
-      true,
-      120
-    ],
     "no-default-export": true,
     "no-mergeable-namespace": true,
     "no-require-imports": true,
@@ -213,7 +209,6 @@
     "one-line": [
       true,
       "check-catch",
-      "check-else",
       "check-finally",
       "check-open-brace",
       "check-whitespace"

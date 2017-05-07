@@ -30,7 +30,7 @@
       true
     ],
     "no-import-side-effect": [
-      true,
+      false,
       {
         "ignore-module": "^rxjs/"
       }
@@ -62,7 +62,7 @@
     ],
     "quotemark": [
       true,
-      "single",
+      "double",
       "jsx-double"
     ],
     "triple-equals": [

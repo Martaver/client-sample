@@ -1,10 +1,9 @@
-import { setStatefulModules } from 'fuse-box/modules/fuse-hmr';
-import './index';
-// tslint:disable-next-line:no-import-side-effect
+import { setStatefulModules } from "fuse-box/modules/fuse-hmr";
+import "./index";
 
 const statefulModules = [
-  'store/',
-  'router/',
+  "store/",
+  "router/",
 ];
 
 const isStateful = (moduleName: string) =>

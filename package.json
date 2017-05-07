@@ -20,7 +20,7 @@
     "lint": "tslint --project src/tsconfig.json",
     "test": "jest --config jest.json",
     "test:nocache": "jest --config jest.json --no-cache",
-    "test:update": "jest --config jest.json -u",    
+    "test:update": "jest --config jest.json -u",
     "deploy:init": "git clone https://github.com/piotrwitek/react-currency-converter --branch gh-pages dist",
     "deploy": "git checkout gh-pages && cd dist && git add --all && git commit -m \"New Release\" && git push"
   },
@@ -28,12 +28,12 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
-    "react-redux-typescript": "^2.2.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-observable": "^0.14.1",
     "reselect": "^3.0.0",
     "rxjs": "^5.3.0",
+    "servicestack-client": "^0.0.34",
     "tslib": "^1.6.0"
   },
   "devDependencies": {
@@ -41,6 +41,7 @@
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.23",
     "@types/react-dom": "^15.5.0",
+    "@types/redux": "^3.6.0",
     "@types/react-redux": "^4.4.40",
     "@types/react-router-dom": "^4.0.4",
     "@types/shelljs": "^0.7.0",

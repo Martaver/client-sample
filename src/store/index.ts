@@ -1,22 +1,15 @@
-import { returntypeof } from 'react-redux-typescript';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import { combineEpics, createEpicMiddleware } from "redux-observable";
+import { HomeReducer, HomeState } from "../routes/Home";
 
 declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 
 export type RootState = {
-  routing: any;
+  home: HomeState,
 };
-
-const actionCreators = {
-
-};
-
-const actions = Object.values(actionCreators).map(returntypeof);
-export type Action = typeof actions[number];
 
 const rootReducer = combineReducers<RootState>({
-
+  home: HomeReducer,
 });
 
 // rehydrating state on app start: implement here...
