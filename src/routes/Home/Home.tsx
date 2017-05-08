@@ -12,12 +12,12 @@ const mapStateToProps = (state: RootState) => ({
   SomeValue: state.home.SomeValue,
 });
 
-const dispatchToProps = {
+const mapDispatchToProps = {
   ...HomeActions,
 };
 
 const stateProps = returntypeof(mapStateToProps);
-type Props = typeof stateProps & typeof dispatchToProps & RouteComponentProps<any>;
+type Props = typeof stateProps & typeof mapDispatchToProps & RouteComponentProps<any>;
 
 const component: React.StatelessComponent<Props> = (p) => (
   <div>
