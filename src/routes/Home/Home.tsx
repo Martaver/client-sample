@@ -9,7 +9,9 @@ import { RootState } from "../../store/index";
 
 const mapStateToProps = (state: RootState) => {
   console.log("mapping state to props", state);
-  return state.home;
+  return {
+    SomeValue: state.home.SomeValue,
+  };
 };
 
 const stateProps = returntypeof(mapStateToProps);

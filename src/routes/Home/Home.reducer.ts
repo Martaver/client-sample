@@ -13,13 +13,15 @@ export const HomeReducer = (state: HomeState = initial, action: HomeAction): Hom
   switch (action.type) {
     case HomeActions.setNarf.type: {
       console.log("narfing");
-      state.SomeValue = "NARF";
-      return state;
+      return {
+        SomeValue: "NARF",
+      };
     }
     case HomeActions.setFran.type: {
       console.log("franing");
-      state.SomeValue = "FRAN";
-      return state;
+      return {
+        SomeValue: "FRANTIC",
+      };
     }
     default: {
       return state;

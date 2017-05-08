@@ -12,7 +12,7 @@ export const App: React.StatelessComponent<{}> = () => (
     <Provider store={store}>
       <BrowserRouter >
         <CoreLayout>
-          <Route exact={true} path="/" component={Home} />
+          <Route exact={true} path="/" component={ Home } />
         </CoreLayout>
       </BrowserRouter>
     </Provider>
