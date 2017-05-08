@@ -6,16 +6,18 @@ import { HomeState } from "./Home.reducer";
 import { HomeActions } from "./Home.actions";
 import { returntypeof } from "react-redux-typescript";
 import { RootState } from "../../store/index";
+import { RouteComponentProps } from "react-router";
 
-const mapStateToProps = (state: RootState) => {
-  console.log("mapping state to props", state);
-  return {
-    SomeValue: state.home.SomeValue,
-  };
+const mapStateToProps = (state: RootState) => ({
+  SomeValue: state.home.SomeValue,
+});
+
+const dispatchToProps = {
+  ...HomeActions,
 };
 
 const stateProps = returntypeof(mapStateToProps);
-type Props = typeof stateProps & typeof HomeActions;
+type Props = typeof stateProps & typeof dispatchToProps & RouteComponentProps<any>;
 
 const component: React.StatelessComponent<Props> = (p) => (
   <div>
@@ -26,4 +28,4 @@ const component: React.StatelessComponent<Props> = (p) => (
   </div>
 );
 
-export const Home = connect(mapStateToProps, HomeActions)(component);
+export const Home = connect<{}, {}, Props>(mapStateToProps, HomeActions)(component);
