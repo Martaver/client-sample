@@ -1,15 +1,27 @@
 import * as React from "react";
 import { Route } from "react-router";
-import { ConnectedRouter } from "react-router-redux";
+import { ConnectedRouter, push } from "react-router-redux";
 import { CoreLayout } from "../layouts/CoreLayout";
 import { RootState, store, history } from "../store";
 import styles from "./App.scss";
 import { Home } from "./Home";
 import { Provider } from "react-redux";
+import { stateless } from "../utils/stateless";
 
-const Foo: React.StatelessComponent<{}> = () => (
-  <div>Hello</div>
-);
+const mapStateToProps = (state: RootState) => ({
+  value: state.home.SomeValue,
+});
+
+const mapDispatchToProps = {
+  goHome: () => push("/"),
+};
+
+export const Foo = stateless(mapStateToProps, mapDispatchToProps)(p => (
+  <div>
+    <div>Please eat</div>
+    <button onClick={p.goHome} >Go home</button>
+  </div>
+));
 
 export const App: React.StatelessComponent<{}> = () => (
   <div>
