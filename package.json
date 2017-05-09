@@ -10,6 +10,7 @@
   "bugs": "https://github.com/portyr/portyr-client/issues",
   "license": "MIT",
   "scripts": {
+    "ss": "node scripts/ss.js",
     "clean": "rm -rf node_modules/ dev/ .fusebox",
     "reinstall": "rm -rf node_modules/ && yarn install",
     "dev": "ts-node -P scripts/ scripts/dev.ts",

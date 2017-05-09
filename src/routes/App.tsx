@@ -6,7 +6,7 @@ import { RootState, store, history } from "../store";
 import styles from "./App.scss";
 import { Home } from "./Home";
 import { Provider } from "react-redux";
-import { stateless } from "../utils/stateless";
+import { stateless } from "../tools/react-redux";
 
 const mapStateToProps = (state: RootState) => ({
   value: state.home.SomeValue,
@@ -18,7 +18,7 @@ const mapDispatchToProps = {
 
 export const Foo = stateless(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-    <div>Please eat</div>
+    <div>Please eat now!</div>
     <button onClick={p.goHome} >Go home</button>
   </div>
 ));
