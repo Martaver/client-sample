@@ -14,8 +14,8 @@ export type RootState = {
 };
 
 const rootReducer = combineReducers<RootState>({
-  home: HomeReducer,
   router: routerReducer,
+  home: HomeReducer,
 });
 
 // rehydrating state on app start: implement here...
@@ -32,5 +32,5 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = createStore(
   rootReducer,
   recoverState(),
-  composeEnhancers(applyMiddleware(routerMw, epicMiddleware)),
+  composeEnhancers(applyMiddleware(routerMw)),
 );

@@ -7,6 +7,7 @@ import { HomeActions } from "./Home.actions";
 import { returntypeof } from "react-redux-typescript";
 import { RootState } from "../../store/index";
 import { RouteComponentProps } from "react-router";
+import { push } from "react-router-redux";
 
 const mapStateToProps = (state: RootState) => ({
   SomeValue: state.home.SomeValue,
@@ -14,10 +15,11 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = {
   ...HomeActions,
+  goFoo: () => push("/foo"),
 };
 
 const stateProps = returntypeof(mapStateToProps);
-type Props = typeof stateProps & typeof mapDispatchToProps & RouteComponentProps<any>;
+type Props = typeof stateProps & typeof mapDispatchToProps & RouteComponentProps<any> & JSX.Element;
 
 const component: React.StatelessComponent<Props> = (p) => (
   <div>
@@ -25,7 +27,8 @@ const component: React.StatelessComponent<Props> = (p) => (
     <img src={logo} className="app-logo" alt="logo" />
     <button onClick={p.setFran} >Set Fran</button>
     <button onClick={p.setNarf} >Set Narf</button>
+    <button onClick={p.goFoo}>Go foo</button>
   </div>
 );
 
-export const Home = connect<{}, {}, Props>(mapStateToProps, HomeActions)(component);
+export const Home = connect<{}, {}, Props>(mapStateToProps, mapDispatchToProps)(component);
