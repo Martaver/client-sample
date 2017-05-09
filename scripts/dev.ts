@@ -2,6 +2,8 @@ import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugi
 import { cp, mkdir, rm } from "shelljs";
 import { Environment } from "./Environment";
 import * as express from "express";
+import * as proxy from "express-http-proxy";
+
 // paths
 const SRC_PATH = "src/";
 const BUILD_PATH = "dev/"; // Relative to the HomeDir.
@@ -28,6 +30,7 @@ const fuse = new FuseBox({
 fuse.dev({port: 3000, root: false }, server => {
   const app = server.httpServer.app as express.Application;
   app.use(express.static(`D:/mm/portyr/portyr-client/${BUILD_PATH}`));
+  app.use("/api", proxy("localhost:5000"));
   app.use("*", (req, res) => {
     res.sendFile(`D:/mm/portyr/portyr-client/${BUILD_PATH}/index.html`);
   });

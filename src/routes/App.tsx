@@ -7,6 +7,8 @@ import styles from "./App.scss";
 import { Home } from "./Home";
 import { Provider } from "react-redux";
 import { stateless } from "../tools/react-redux";
+import { JsonServiceClient } from "servicestack-client";
+import * as portyr from "../types/portyr-api";
 
 const mapStateToProps = (state: RootState) => ({
   value: state.home.SomeValue,
@@ -16,12 +18,20 @@ const mapDispatchToProps = {
   goHome: () => push("/"),
 };
 
-export const Foo = stateless(mapStateToProps, mapDispatchToProps)(p => (
-  <div>
-    <div>Please eat now!</div>
-    <button onClick={p.goHome} >Go home</button>
-  </div>
-));
+export const Foo = stateless(mapStateToProps, mapDispatchToProps)(p => {
+
+  const client = new JsonServiceClient("/api");
+  const response = client.get(new portyr.HelloWorld());
+  response.then(r => {
+    console.log(r.hello);
+  });
+  return (
+    <div>
+      <div>Please eat now!</div>
+      <button onClick={p.goHome} >Go home</button>
+    </div>
+  );
+});
 
 export const App: React.StatelessComponent<{}> = () => (
   <div>
