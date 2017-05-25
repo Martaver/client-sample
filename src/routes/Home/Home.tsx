@@ -6,25 +6,35 @@ import { HomeActions } from "./Home.actions";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
 import { Toolbar } from "./Toolbar";
-import { connect } from "react-redux";
+import { MapStateToPropsParam, MapDispatchToPropsFunction, MapDispatchToPropsParam, MapDispatchToPropsObject, ComponentDecorator } from "react-redux";
+import { connect } from "../../tools/react-redux-typescript";
 
-const mapStateToProps = (state: RootState) => ({
+interface HomeProps {
+
+}
+
+const mapStateToProps = (state: RootState, own: HomeProps) => ({
   SomeValue: state.home.SomeValue,
 });
 
-const mapDispatchToProps = (d: Function) => ({
+const mapDispatchToProps = {
   ...HomeActions,
   goFoo: () => push("/foo"),
-});
+};
+
+// const mapDispatchToProps = {
+//   ...HomeActions,
+//   goFoo: () => push("/foo"),
+// };
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
     <h1 className={styles.clr}>Welcome {p.SomeValue}!</h1>
     <h2>Something else awesome!</h2>
-    <Toolbar Something={"Some bullshit in the toolbar"} />
+    <Toolbar Something={"Welcome to Portyr"} />
     <img src={logo} className="app-logo" alt="logo" />
-    <button onClick={p.setFran} >Set Franks</button>
-    <button onClick={p.setNarf} >Set Narf</button>
-    <button onClick={p.goFoo}>I'm hungry</button>
+    <button onClick={p.setFran} >Set Narf</button>
+    <button onClick={p.setNarf} >Set Fran</button>
+    <button onClick={p.goFoo}>Go Foo</button>
   </div>
 ));

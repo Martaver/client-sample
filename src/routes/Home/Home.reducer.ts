@@ -17,7 +17,7 @@ export const HomeReducer = (state: HomeState = initial, action: HomeAction): Hom
     }
     case HomeActions.setFran.type: {
       return {
-        SomeValue: "FRANTIC",
+        SomeValue: "FRANT",
       };
     }
     default: {

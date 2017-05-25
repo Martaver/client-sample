@@ -2,7 +2,8 @@ import * as React from "react";
 
 import { RootState } from "../../store/index";
 import { RouteComponentProps } from "react-router";
-import { connect, Dispatch } from "react-redux";
+import { Dispatch } from "react-redux";
+import { connect } from "../../tools/react-redux-typescript";
 
 interface ToolbarProps {
   Something: string

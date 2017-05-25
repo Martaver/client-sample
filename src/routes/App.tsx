@@ -5,8 +5,8 @@ import { CoreLayout } from "../layouts/CoreLayout";
 import { RootState, store, history } from "../store";
 import styles from "./App.scss";
 import { Home } from "./Home";
-import { Provider, connect } from "react-redux";
-import { stateless } from "../tools/react-redux";
+import { Provider } from "react-redux";
+import { connect } from "../tools/react-redux-typescript";
 import { JsonServiceClient } from "servicestack-client";
 import * as portyr from "../types/portyr-api";
 import * as H from "history";
@@ -20,9 +20,9 @@ const mapStateToProps = (state: RootState, own: FooProps) => ({
   value: state.home.SomeValue,
 });
 
-const mapDispatchToProps = (d: Function) => ({
+const mapDispatchToProps = {
   goHome: () => push("/"),
-});
+};
 
 export const Foo = connect(mapStateToProps, mapDispatchToProps)(p => {
 
