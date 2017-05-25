@@ -138,7 +138,7 @@
     ],
     "linebreak-style": [
       true,
-      "LF"
+      "CRLF"
     ],
     "max-classes-per-file": [
       true,

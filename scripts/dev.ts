@@ -36,12 +36,12 @@ fuse.dev({port: 3000, root: false }, server => {
   });
 });
 
-fuse.bundle("vendor")
-  .instructions("~ index.dev.tsx");
-
 fuse.bundle("app")
   .instructions("!> [index.dev.tsx]")
   .watch()
   .hmr();
+
+fuse.bundle("vendor")
+  .instructions("~ index.dev.tsx");
 
 fuse.run();

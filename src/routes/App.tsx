@@ -1,30 +1,38 @@
 import * as React from "react";
-import { Route } from "react-router";
+import { Route, RouteComponentProps, match } from "react-router";
 import { ConnectedRouter, push } from "react-router-redux";
 import { CoreLayout } from "../layouts/CoreLayout";
 import { RootState, store, history } from "../store";
 import styles from "./App.scss";
 import { Home } from "./Home";
-import { Provider } from "react-redux";
+import { Provider, connect } from "react-redux";
 import { stateless } from "../tools/react-redux";
 import { JsonServiceClient } from "servicestack-client";
 import * as portyr from "../types/portyr-api";
+import * as H from "history";
+import { Dispatch } from "redux";
 
-const mapStateToProps = (state: RootState) => ({
+interface FooProps {
+  SomethingElse: string
+}
+
+const mapStateToProps = (state: RootState, own: FooProps) => ({
   value: state.home.SomeValue,
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps = (d: Function) => ({
   goHome: () => push("/"),
-};
+});
 
-export const Foo = stateless(mapStateToProps, mapDispatchToProps)(p => {
+export const Foo = connect(mapStateToProps, mapDispatchToProps)(p => {
 
   const client = new JsonServiceClient("/api");
-  const response = client.get(new portyr.HelloWorld());
+  const request = new portyr.HelloWorld();
+  const response = client.get(request);
   response.then(r => {
-    console.log(r.hello);
+    console.log(r);
   });
+
   return (
     <div>
       <div>Please eat now!</div>
@@ -38,8 +46,8 @@ export const App: React.StatelessComponent<{}> = () => (
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <CoreLayout>
-          <Route exact={true} path="/" component={Home} />
-          <Route path="/foo" component={Foo} />
+          <Route exact={true} path="/" component={Home as any} />
+          <Route path="/foo" component={Foo as any} />
         </CoreLayout>
       </ConnectedRouter>
     </Provider>
