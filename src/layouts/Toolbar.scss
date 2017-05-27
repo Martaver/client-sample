@@ -1,6 +1,12 @@
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;  
+}
+
 .logo {
   height: 40px;
   background-image: url("./logo.svg");
-  background-repeat: no-repeat;
-  border: 1px solid red;
+  background-repeat: no-repeat;  
 }
