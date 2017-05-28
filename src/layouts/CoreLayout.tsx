@@ -5,10 +5,11 @@ import { RouteComponentProps } from "react-router";
 import { Toolbar } from "./Toolbar";
 
 import { style } from "typestyle";
+import * as colors from "../styles/colors";
 
 const styles = {
   clr: style({
-    color: "red";
+    color: colors.blue
   })
 }
 

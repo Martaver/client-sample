@@ -1,3 +1,4 @@
+import colors from "../../styles/colors";
 import * as React from "react";
 import { HomeState } from "./Home.reducer";
 import { HomeActions } from "./Home.actions";
@@ -10,7 +11,7 @@ import { style } from "typestyle";
 
 const styles = {
   welcome: style({
-    color: "orange";
+    color: colors.redLight
   })
 }
 
