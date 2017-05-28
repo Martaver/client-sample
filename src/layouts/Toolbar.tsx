@@ -7,7 +7,19 @@ import { connect } from "../tools/react-redux-typescript";
 
 import * as logo from "./logo.svg";
 
-import s from "./Toolbar.scss"
+import { style } from "typestyle";
+import { url, quote, px } from "csx";
+
+const styles = {
+  logo: style({
+    backgroundImage: url(quote(logo)),
+    backgroundRepeat: "no-repeat",
+    height: px(40)
+  }),
+  toolbar: style({
+    height: 60px,
+  })
+}
 
 interface ToolbarProps {
   Something: string
@@ -22,7 +34,7 @@ const mapDispatchToProps = (d: Dispatch<RootState>) => ({
 });
 
 export const Toolbar = connect(mapStateToProps, mapDispatchToProps)(p => (
-  <div className={s.toolbar}>
-    <span className={s.logo} alt="Portyr" />
+  <div className={styles.toolbar}>
+    <div className={styles.logo} alt="Portyr" />
   </div>
 ))
