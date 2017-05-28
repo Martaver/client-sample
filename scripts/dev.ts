@@ -1,4 +1,4 @@
-import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin } from "fuse-box";
+import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin } from "fuse-box";
 import { cp, mkdir, rm } from "shelljs";
 import { Environment } from "./Environment";
 import * as express from "express";
@@ -21,12 +21,27 @@ const fuse = new FuseBox({
   output: `../${BUILD_PATH}$name.js`,
   sourceMaps: true,
   plugins: [
-    EnvPlugin({NODE_ENV: Environment.Development}),
-    ImageBase64Plugin({ useDefault: true }),
-    [SassPlugin(), CSSModules(), CSSResourcePlugin({
-      dist: `../${BUILD_PATH}/assets`,
-      resolve: (f) => `/assets/${f}`,
-    }), CSSPlugin()],
+    CopyPlugin({
+      files: [`../${SRC_PATH}/styles/*.css`],
+      dest: "assets"
+    }),
+    EnvPlugin({
+      NODE_ENV: Environment.Development
+    }),
+    ImageBase64Plugin({
+      useDefault: true
+    }),
+    [
+      SassPlugin({
+        importer: true
+      }),
+      CSSModules(),
+      CSSResourcePlugin({
+        dist: `../${BUILD_PATH}/assets`,
+        resolve: (f) => `/assets/${f}`,
+      }),
+      CSSPlugin()
+    ],
   ],
 });
 

@@ -3,7 +3,7 @@ import { Route, RouteComponentProps, match } from "react-router";
 import { ConnectedRouter, push } from "react-router-redux";
 import { CoreLayout } from "../layouts/CoreLayout";
 import { RootState, store, history } from "../store";
-import styles from "./App.scss";
+import "./App.scss";
 import { Home } from "./Home";
 import { Provider } from "react-redux";
 import { connect } from "../tools/react-redux-typescript";

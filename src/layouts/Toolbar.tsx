@@ -23,7 +23,6 @@ const mapDispatchToProps = (d: Dispatch<RootState>) => ({
 
 export const Toolbar = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div className={s.toolbar}>
-    <div className={s.logo} alt="Portyr" />
-    Testing: {p.Something}
+    <span className={s.logo} alt="Portyr" />
   </div>
 ))
