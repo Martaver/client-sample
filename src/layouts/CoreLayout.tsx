@@ -9,7 +9,7 @@ import * as colors from "../styles/colors";
 
 const styles = {
   clr: style({
-    color: colors.blue
+    color: colors.blueDark
   })
 }
 

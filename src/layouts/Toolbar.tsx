@@ -17,7 +17,7 @@ const styles = {
     height: px(40)
   }),
   toolbar: style({
-    height: 60px,
+    height: px(60),
   })
 }
 

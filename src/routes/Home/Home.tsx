@@ -11,7 +11,7 @@ import { style } from "typestyle";
 
 const styles = {
   welcome: style({
-    color: colors.redLight
+    color: colors.red
   })
 }
 
