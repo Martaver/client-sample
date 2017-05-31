@@ -8,37 +8,8 @@ import { Provider } from "react-redux";
 import { connect } from "../tools/react-redux-typescript";
 import { JsonServiceClient } from "servicestack-client";
 import * as portyr from "../types/portyr-api";
-import * as H from "history";
 import { Dispatch } from "redux";
-
-interface FooProps {
-  SomethingElse: string
-}
-
-const mapStateToProps = (state: RootState, own: FooProps) => ({
-  value: state.home.SomeValue,
-});
-
-const mapDispatchToProps = {
-  goHome: () => push("/"),
-};
-
-export const Foo = connect(mapStateToProps, mapDispatchToProps)(p => {
-
-  const client = new JsonServiceClient("/api");
-  const request = new portyr.HelloWorld();
-  const response = client.get(request);
-  response.then(r => {
-    console.log(r);
-  });
-
-  return (
-    <div>
-      <div>Please eat now!</div>
-      <button onClick={p.goHome} >Go home</button>
-    </div>
-  );
-});
+import { Foo } from "./Foo";
 
 export const App: React.StatelessComponent<{}> = () => (
   <div>

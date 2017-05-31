@@ -1,3 +1,4 @@
+import colors from "../styles/colors";
 import * as React from "react";
 
 import { RootState } from "../store/index";
@@ -9,6 +10,7 @@ import * as logo from "./logo.svg";
 
 import { style } from "typestyle";
 import { url, quote, px } from "csx";
+import { Action } from "redux";
 
 const styles = {
   logo: style({
@@ -21,20 +23,38 @@ const styles = {
   })
 }
 
-interface ToolbarProps {
+interface OwnProps {
   Something: string
 }
 
-const mapStateToProps = (s: RootState, o: ToolbarProps) => ({
+interface StateProps {
+  myProperty: string
+}
 
+interface DispatchProps {
+  doSomething: () => Action;
+}
+
+type AllProps = OwnProps & StateProps & DispatchProps;
+
+class ToolbarComp extends React.Component<AllProps, RootState> {
+  render() {
+    return (
+      <div className={styles.toolbar}>
+        {this.props.myProperty}
+        {this.props.Something}
+        <div className={styles.logo} alt="Portyr" />
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (s: RootState, p: OwnProps) => ({
+  myProperty: s.home.SomeValue
 });
 
 const mapDispatchToProps = (d: Dispatch<RootState>) => ({
-
+  doSomething: () => ({type: "blah", payload: {}})
 });
 
-export const Toolbar = connect(mapStateToProps, mapDispatchToProps)(p => (
-  <div className={styles.toolbar}>
-    <div className={styles.logo} alt="Portyr" />
-  </div>
-))
+export const Toolbar = connect<StateProps, DispatchProps, OwnProps>(mapStateToProps, mapDispatchToProps)(ToolbarComp)

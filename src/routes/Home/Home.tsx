@@ -16,17 +16,17 @@ const styles = {
 }
 
 interface HomeProps {
-
+  myOptions: string
 }
 
 const mapStateToProps = (state: RootState, own: HomeProps) => ({
   SomeValue: state.home.SomeValue,
 });
 
-const mapDispatchToProps = {
+const mapDispatchToProps = ({
   ...HomeActions,
   goFoo: () => push("/foo"),
-};
+});
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>

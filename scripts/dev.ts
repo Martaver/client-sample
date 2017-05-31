@@ -31,17 +31,6 @@ const fuse = new FuseBox({
     ImageBase64Plugin({
       useDefault: true
     }),
-    [
-      SassPlugin({
-        importer: true
-      }),
-      CSSModules(),
-      CSSResourcePlugin({
-        dist: `../${BUILD_PATH}/assets`,
-        resolve: (f) => `/assets/${f}`,
-      }),
-      CSSPlugin()
-    ],
   ],
 });
 

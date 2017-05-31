@@ -1,10 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {  } from "whatwg-fetch";
 import { App } from "./routes/App";
 import {Environment} from "../scripts/Environment";
-import { normalize } from "csstips";
+import { normalize, setupPage } from "csstips";
 
 ReactDOM.render(<App />, document.getElementById("app-container"));
+
+/**
+ * Configures normalize.css for the page.
+ */
 normalize();
 
+/**
+ * Sets app container to 100% height and width, sets box-sizing: border etc.
+ */
+setupPage("#app-container");

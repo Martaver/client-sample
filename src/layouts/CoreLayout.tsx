@@ -9,14 +9,14 @@ import * as colors from "../styles/colors";
 
 const styles = {
   clr: style({
-    color: colors.blueDark
+    color: colors.blue
   })
 }
 
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
   <div>
     <Toolbar Something={"Welcome to Portyr"} />
-    <h1 className={styles.clr}>Testing Core Layout</h1>
+    <h1 className={styles.clr}>Testing Core Layouts</h1>
     {children}
   </div>
 );
