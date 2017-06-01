@@ -19,10 +19,13 @@ interface SsRequestPayload<T> {
 const NAMESPACE = "SERVICESTACK";
 const RECEIVE = "RECEIVE";
 const SEND = "SEND";
+const ERROR = "ERROR";
 
 const actionCreator = actionCreatorFactory(NAMESPACE);
 
 export const receive = <TResponse>() => actionCreator<TResponse>(RECEIVE);
+
+export const error = <TResponse>() => actionCreator<TResponse>(ERROR);
 
 export const send = <TRequest>(method: HttpMethod = "GET", args?: any, url?: string): SsRequestCreator<TRequest> => {
 
@@ -43,18 +46,20 @@ export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) =
     if(action.type == `${NAMESPACE}/${SEND}`) {
       const request = action as SsRequestAction;
 
-      client
-
       //Send the request, letting ServiceStack handle the plumbing.
-      .send(request.payload.method, request.payload.request, request.payload.args, request.payload.url)
+      client.send(request.payload.method, request.payload.request, request.payload.args, request.payload.url)
 
-      //Receive a successful response and shape it as a 'receive' action that be targetted by a reducer.
-      .then(response => {
-        next({
+      //Receive an error response and shape it as an 'error' action that can be handled by a reducer.
+      .catch(error => next({
+        type: `${NAMESPACE}/${ERROR}`,
+        payload: error
+      }))
+
+      //Receive a successful response and shape it as a 'receive' action that be handled by a reducer.
+      .then(response => next({
           type: `${NAMESPACE}/${RECEIVE}`,
           payload: response,
-        });
-      });
+        }));
     }
     // Call next when middleware is ready to proceed.
     // Next passes an action to the next middleware layer.
