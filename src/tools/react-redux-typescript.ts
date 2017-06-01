@@ -9,7 +9,3 @@ export function connect<TStateProps, TDispatchProps, TOwnProps>(s: MapStateToPro
 export function connect<TStateProps, TDispatchProps, TOwnProps>(s: MapStateToPropsParam<TStateProps, TOwnProps>, d: MapDispatchToPropsParam<TDispatchProps, TOwnProps>) {
   return reduxConnect<TStateProps, TDispatchProps, TOwnProps>(s, d);
 }
-
-export function rtypeof<RT>(expression: (...params: any[]) => RT): RT {
-  return {} as RT;
-}

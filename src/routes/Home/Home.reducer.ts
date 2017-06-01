@@ -1,21 +1,19 @@
 import { HomeActions } from "./Home.actions";
 import { reducerWithInitialState } from "typescript-fsa-reducers";
 
-export type HomeState = {
-  SomeValue: string,
-};
-
-const INITIAL_STATE: HomeState = {
+const INITIAL_STATE = {
   SomeValue: "FRAN",
 };
 
+type HomeState = typeof INITIAL_STATE;
+
 export const HomeReducer = reducerWithInitialState(INITIAL_STATE)
 
-.case(HomeActions.setFran, (s, p) => ({
-  SomeValue: "FRANT"
-}))
+  .case(HomeActions.setFran, (s, p) => ({
+    SomeValue: "FRANT"
+  }))
 
-.case(HomeActions.setNarf, (s, p) => ({
-  SomeValue: "NARF"
-}))
+  .case(HomeActions.setNarf, (s, p) => ({
+    SomeValue: "NARF"
+  }))
 ;

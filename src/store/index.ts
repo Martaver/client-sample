@@ -4,7 +4,7 @@ import createBrowserHistory from "history/createBrowserHistory";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import { HomeReducer, HomeState } from "../routes/Home";
 import { serviceStackMiddleware } from "../tools/servicestack";
-import { FooReducer, FooState } from "../routes/Foo";
+import { FooReducer, FooState } from "./Foo";
 
 declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 

@@ -1,5 +1,8 @@
 {
   "rules": {
-
+    "semicolon": [
+      true
+    ],
+    "no-implicit-any": true
   }
 }

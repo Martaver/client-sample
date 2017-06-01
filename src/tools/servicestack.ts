@@ -1,20 +1,19 @@
 import { HelloWorld } from "../types/portyr-api";
 import { Store } from "redux";
-import { Action } from "redux";
 import { IReturn, JsonServiceClient } from "servicestack-client";
-import actionCreatorFactory, { AnyAction } from "typescript-fsa";
+import actionCreatorFactory, { AnyAction, ActionCreator, Action } from "typescript-fsa";
 
 export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
 
 interface SsRequestAction extends AnyAction {
-  payload: SsRequestPayload<any>
+  payload: SsRequestPayload<any>;
 }
 
 interface SsRequestPayload<T> {
-    method: HttpMethod,
-    args?: any,
-    url?: string,
-    request: T
+    method: HttpMethod;
+    args?: any;
+    url?: string;
+    request: T;
 }
 
 const NAMESPACE = "SERVICESTACK";
@@ -25,10 +24,15 @@ const actionCreator = actionCreatorFactory(NAMESPACE);
 
 export const receive = <TResponse>() => actionCreator<TResponse>(RECEIVE);
 
-export const send = <TRequest>(method: HttpMethod = "GET", args?: any, url?: string) => {
-  const action = actionCreator<SsRequestPayload<TRequest>>(SEND);
-  return (request: TRequest) => action({method, args, url, request});
+export const send = <TRequest>(method: HttpMethod = "GET", args?: any, url?: string): SsRequestCreator<TRequest> => {
+
+  const create = actionCreator<SsRequestPayload<TRequest>>(SEND);
+  return Object.assign((request: TRequest) => create({method, args, url, request}), create);
 };
+
+interface SsRequestCreator<TRequest> extends ActionCreator<SsRequestPayload<TRequest>> {
+  (request: TRequest): Action<SsRequestPayload<TRequest>>;
+}
 
 export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) => {
 
@@ -50,7 +54,7 @@ export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) =
           type: `${NAMESPACE}/${RECEIVE}`,
           payload: response,
         });
-      })
+      });
     }
     // Call next when middleware is ready to proceed.
     // Next passes an action to the next middleware layer.
