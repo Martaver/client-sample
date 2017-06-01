@@ -9,21 +9,23 @@ interface SsRequestAction<T> {
   type: "SERVICESTACK_REQUEST",
   payload: {
     method: HttpMethod,
-    url: string,
+    args?: any,
+    url?: string,
     request: IReturn<any>
   }
 }
 
-export const SsRequestActionCreator = <T extends IReturn<any>>(method: HttpMethod, url: string) => (request: T): SsRequestAction<T> => ({
+export const SsRequestActionCreator = <T extends IReturn<any>>(method: HttpMethod, args?: any, url?: string) => (request: T): SsRequestAction<T> => ({
   type: "SERVICESTACK_REQUEST",
   payload: {
     method,
+    args,
     url,
     request
   }
 });
 
-const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) => {
+export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) => {
 
   // Configure client here.
   const client = new JsonServiceClient(baseUrl);
@@ -32,7 +34,7 @@ const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) => {
 
     if(action.type === "SERVICESTACK_REQUEST") {
       const request = action as SsRequestAction<HelloWorld>;
-      client.send(request.payload.method, request.payload.request, {}, request.payload.url).then( response => {
+      client.send(request.payload.method, request.payload.request, request.payload.args, request.payload.url).then( response => {
         next({
           type: "SERVICESTACK_RESPONSE",
           payload: {

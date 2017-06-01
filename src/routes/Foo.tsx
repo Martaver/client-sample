@@ -8,7 +8,7 @@ import { push } from "react-router-redux";
 import { JsonServiceClient } from "servicestack-client/src";
 
 export const FooActions = {
-  fetchHello: SsRequestActionCreator<HelloWorld>("GET", "/hello")
+  fetchHello: SsRequestActionCreator<HelloWorld>("GET")
 }
 
 interface FooProps {
@@ -29,7 +29,7 @@ type AllProps = typeof stateProps & typeof dispatchProps & FooProps;
 
 export const Foo = connect(mapStateToProps, dispatchProps)(p => {
 
-  let request = new portyr.HelloWorld();
+  let myRequest = new portyr.HelloWorld();
 
   let myValues = {
     someValue: ""
@@ -40,7 +40,7 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
       <div>Please eat now!</div>
       <div>{myValues.someValue}</div>
       <button onClick={p.goHome} >Go home</button>
-      <button onClick={() => p.fetchHello(request)} >Give me a hello</button>
+      <button onClick={() => p.fetchHello(myRequest)} >Give me a hello</button>
     </div>
   );
 });

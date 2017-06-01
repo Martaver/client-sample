@@ -3,6 +3,7 @@ import { combineEpics, createEpicMiddleware } from "redux-observable";
 import createBrowserHistory from "history/createBrowserHistory";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import { HomeReducer, HomeState } from "../routes/Home";
+import { serviceStackMiddleware } from "../tools/servicestack";
 
 declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 
@@ -28,9 +29,11 @@ const rootEpic = combineEpics(
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const servicestack = serviceStackMiddleware("/api");
+
 // store singleton instance
 export const store = createStore(
   rootReducer,
   recoverState(),
-  composeEnhancers(applyMiddleware(routerMw, epicMiddleware)),
+  composeEnhancers(applyMiddleware(servicestack, routerMw, epicMiddleware)),
 );

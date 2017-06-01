@@ -11,11 +11,11 @@ const INITIAL_STATE: HomeState = {
 
 export const HomeReducer = reducerWithInitialState(INITIAL_STATE)
 
-  .case(HomeActions.setFran, (s, p) => ({
-    SomeValue: "FRANT"
-  }))
+.case(HomeActions.setFran, (s, p) => ({
+  SomeValue: "FRANT"
+}))
 
-  .case(HomeActions.setNarf, (s, p) => ({
-    SomeValue: "NARF"
-  }))
+.case(HomeActions.setNarf, (s, p) => ({
+  SomeValue: "NARF"
+}))
 ;
