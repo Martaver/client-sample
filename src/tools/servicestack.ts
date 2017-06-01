@@ -3,7 +3,7 @@ import { Store } from "redux";
 import { IReturn, JsonServiceClient } from "servicestack-client";
 import actionCreatorFactory, { AnyAction, ActionCreator, Action } from "typescript-fsa";
 
-export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
+export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
 interface SsRequestAction extends AnyAction {
   payload: SsRequestPayload<any>;
