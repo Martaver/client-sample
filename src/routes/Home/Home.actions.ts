@@ -1,9 +1,9 @@
-import { actionCreator } from "../../tools/react-redux-typescript";
+import actionCreatorFactory from "typescript-fsa";
 import { RootState } from "../../store/index";
 
-export const HomeActions = {
-  setNarf: actionCreator("SET_NARF"),
-  setFran: actionCreator("SET_FRAN"),
-};
+const actionCreator = actionCreatorFactory();
 
-export type HomeAction = typeof HomeActions[keyof typeof HomeActions];
+export const HomeActions = {
+  setNarf: actionCreator<{someString: string}>("SET_NARF"),
+  setFran: actionCreator<{someNumber: number}>("SET_FRAN"),
+};

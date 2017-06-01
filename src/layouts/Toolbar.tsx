@@ -35,9 +35,7 @@ interface DispatchProps {
   doSomething: () => Action;
 }
 
-type AllProps = OwnProps & StateProps & DispatchProps;
-
-class ToolbarComp extends React.Component<AllProps, RootState> {
+class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchProps, RootState> {
   render() {
     return (
       <div className={styles.toolbar}>
@@ -57,4 +55,4 @@ const mapDispatchToProps = (d: Dispatch<RootState>) => ({
   doSomething: () => ({type: "blah", payload: {}})
 });
 
-export const Toolbar = connect<StateProps, DispatchProps, OwnProps>(mapStateToProps, mapDispatchToProps)(ToolbarComp)
+export const Toolbar = connect<StateProps, DispatchProps, OwnProps>(mapStateToProps, mapDispatchToProps)(ToolbarComponent)

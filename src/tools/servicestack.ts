@@ -1,8 +1,7 @@
 import { HelloWorld } from "../types/portyr-api";
-import { actionCreator } from "./react-redux-typescript";
 import { Store } from "redux";
-import { JsonServiceClient, IReturn, HttpMethods } from "servicestack-client";
 import { Action } from "redux";
+import { IReturn, JsonServiceClient } from "servicestack-client";
 
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
 

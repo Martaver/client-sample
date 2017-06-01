@@ -32,8 +32,8 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
     <h1 className={styles.welcome}>Welcome {p.SomeValue}!</h1>
     <h2>Something else awesome!</h2>
-    <button onClick={p.setFran} >Set Narf</button>
-    <button onClick={p.setNarf} >Set Fran</button>
+    <button onClick={() => p.setFran({someNumber: 1})} >Set Narf</button>
+    <button onClick={() => p.setNarf({someString: "blah"})} >Set Fran</button>
     <button onClick={p.goFoo}>Go Foo</button>
   </div>
 ));
