@@ -1,6 +1,5 @@
 import colors from "../../styles/colors";
 import * as React from "react";
-import { HomeState } from "./Home.reducer";
 import { HomeActions } from "./Home.actions";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
@@ -13,10 +12,10 @@ const styles = {
   welcome: style({
     color: colors.red
   })
-}
+};
 
 interface HomeProps {
-  myOptions: string
+  myOptions: string;
 }
 
 const mapStateToProps = (state: RootState, own: HomeProps) => ({
@@ -32,8 +31,8 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
     <h1 className={styles.welcome}>Welcome {p.SomeValue}!</h1>
     <h2>Something else awesome!</h2>
-    <button onClick={() => p.setFran({someNumber: 1})} >Set Narf</button>
-    <button onClick={() => p.setNarf({someString: "blah"})} >Set Fran</button>
+    <button onClick={() => p.setNarf({someString: "blah"})} >Set Narf</button>
+    <button onClick={() => p.setFran({someNumber: 1})} >Set Fran</button>
     <button onClick={p.goFoo}>Go Foo</button>
   </div>
 ));

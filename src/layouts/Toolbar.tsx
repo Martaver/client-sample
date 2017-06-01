@@ -21,14 +21,14 @@ const styles = {
   toolbar: style({
     height: px(60),
   })
-}
+};
 
 interface OwnProps {
-  Something: string
+  Something: string;
 }
 
 interface StateProps {
-  myProperty: string
+  myProperty: string;
 }
 
 interface DispatchProps {
@@ -43,7 +43,7 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
         {this.props.Something}
         <div className={styles.logo} alt="Portyr" />
       </div>
-    )
+    );
   }
 }
 
@@ -55,4 +55,4 @@ const mapDispatchToProps = (d: Dispatch<RootState>) => ({
   doSomething: () => ({type: "blah", payload: {}})
 });
 
-export const Toolbar = connect<StateProps, DispatchProps, OwnProps>(mapStateToProps, mapDispatchToProps)(ToolbarComponent)
+export const Toolbar = connect<StateProps, DispatchProps, OwnProps>(mapStateToProps, mapDispatchToProps)(ToolbarComponent);

@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   SomeValue: "FRAN",
 };
 
-type HomeState = typeof INITIAL_STATE;
+export type HomeState = typeof INITIAL_STATE;
 
 export const HomeReducer = reducerWithInitialState(INITIAL_STATE)
 

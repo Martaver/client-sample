@@ -6,8 +6,8 @@ import actionCreatorFactory from "typescript-fsa";
 const actionCreator = actionCreatorFactory("FOO");
 
 export const FooActions = {
-  fetchHello: send<HelloWorld>("GET"),
-  gotHello: receive<HelloWorldResponse>(),
+  sendHello: send<HelloWorld>("GET"),
+  receiveHello: receive<HelloWorldResponse>(),
   updateName: actionCreator<{name: string}>("NAME_CHANGE")
 };
 
@@ -23,14 +23,11 @@ const INITIAL_STATE: FooState = {
 
 export const FooReducer = reducerWithInitialState(INITIAL_STATE)
 
-  .case(FooActions.fetchHello, (s, p) => {
-    console.log("Fetching hello: ",p);
-    return s;
-  })
+  .case(FooActions.sendHello, (s, p) => ({...s}))
 
   .case(FooActions.updateName, (s, p) => ({...s, ...p}))
 
-  .case(FooActions.gotHello, (s, p) => ({...s,
+  .case(FooActions.receiveHello, (s, p) => ({...s,
     hello: p.hello,
   }))
 ;

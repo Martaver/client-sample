@@ -29,7 +29,7 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
   const fetchHello = () => {
    const request = new portyr.HelloWorld();
    request.name = p.name;
-   p.fetchHello(request);
+   p.sendHello(request);
   };
 
   const nameChanged = (e: ChangeEvent<HTMLInputElement>) => {

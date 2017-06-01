@@ -4,6 +4,8 @@
       true
     ],
     "no-implicit-any": true,
-    "linebreak-style": "CRLF"
+    "linebreak-style": [
+      "CRLF"
+    ]
   }
 }

@@ -11,7 +11,7 @@ const styles = {
   clr: style({
     color: colors.blue
   })
-}
+};
 
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
   <div>
