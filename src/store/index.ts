@@ -4,6 +4,7 @@ import createBrowserHistory from "history/createBrowserHistory";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import { HomeReducer, HomeState } from "../routes/Home";
 import { serviceStackMiddleware } from "../tools/servicestack";
+import { FooReducer, FooState } from "../routes/Foo";
 
 declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 
@@ -12,11 +13,13 @@ const routerMw = routerMiddleware(history);
 
 export type RootState = {
   home: HomeState,
+  foo: FooState
 };
 
 const rootReducer = combineReducers<RootState>({
   router: routerReducer,
   home: HomeReducer,
+  foo: FooReducer
 });
 
 // rehydrating state on app start: implement here...

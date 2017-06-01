@@ -2,45 +2,53 @@ import { HelloWorld } from "../types/portyr-api";
 import { Store } from "redux";
 import { Action } from "redux";
 import { IReturn, JsonServiceClient } from "servicestack-client";
+import actionCreatorFactory, { AnyAction } from "typescript-fsa";
 
-type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
+export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
 
-interface SsRequestAction<T> {
-  type: "SERVICESTACK_REQUEST",
-  payload: {
+interface SsRequestAction extends AnyAction {
+  payload: SsRequestPayload<any>
+}
+
+interface SsRequestPayload<T> {
     method: HttpMethod,
     args?: any,
     url?: string,
-    request: IReturn<any>
-  }
+    request: T
 }
 
-export const SsRequestActionCreator = <T extends IReturn<any>>(method: HttpMethod, args?: any, url?: string) => (request: T): SsRequestAction<T> => ({
-  type: "SERVICESTACK_REQUEST",
-  payload: {
-    method,
-    args,
-    url,
-    request
-  }
-});
+const NAMESPACE = "SERVICESTACK";
+const RECEIVE = "RECEIVE";
+const SEND = "SEND";
+
+const actionCreator = actionCreatorFactory(NAMESPACE);
+
+export const receive = <TResponse>() => actionCreator<TResponse>(RECEIVE);
+
+export const send = <TRequest>(method: HttpMethod = "GET", args?: any, url?: string) => {
+  const action = actionCreator<SsRequestPayload<TRequest>>(SEND);
+  return (request: TRequest) => action({method, args, url, request});
+};
 
 export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) => {
 
-  // Configure client here.
   const client = new JsonServiceClient(baseUrl);
 
-  return (next: any) => (action: Action) => {
+  return (next: any) => (action: AnyAction) => {
 
-    if(action.type === "SERVICESTACK_REQUEST") {
-      const request = action as SsRequestAction<HelloWorld>;
-      client.send(request.payload.method, request.payload.request, request.payload.args, request.payload.url).then( response => {
+    if(action.type == `${NAMESPACE}/${SEND}`) {
+      const request = action as SsRequestAction;
+
+      client
+
+      //Send the request, letting ServiceStack handle the plumbing.
+      .send(request.payload.method, request.payload.request, request.payload.args, request.payload.url)
+
+      //Receive a successful response and shape it as a 'receive' action that be targetted by a reducer.
+      .then(response => {
         next({
-          type: "SERVICESTACK_RESPONSE",
-          payload: {
-            ...request.payload,
-            response
-          }
+          type: `${NAMESPACE}/${RECEIVE}`,
+          payload: response,
         });
       })
     }

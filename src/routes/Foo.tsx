@@ -1,22 +1,37 @@
 import * as React from "react";
 import { RootState } from "../store/index";
 import { connect, rtypeof } from "../tools/react-redux-typescript";
-import { SsRequestActionCreator } from "../tools/servicestack";
-import { HelloWorld } from "../types/portyr-api";
+import { receive, send } from "../tools/servicestack";
+import { HelloWorld, HelloWorldResponse } from "../types/portyr-api";
 import * as portyr from "../types/portyr-api";
 import { push } from "react-router-redux";
 import { JsonServiceClient } from "servicestack-client/src";
+import { reducerWithInitialState } from "typescript-fsa-reducers";
 
 export const FooActions = {
-  fetchHello: SsRequestActionCreator<HelloWorld>("GET")
+  fetchHello: send<HelloWorld>("GET"),
+  gotHello: receive<HelloWorldResponse>()
 }
 
+export type FooState = {
+  hello: string
+}
+
+const INITIAL_STATE: FooState = {
+  hello: "-- no hello --"
+}
+
+export const FooReducer = reducerWithInitialState(INITIAL_STATE)
+.case(FooActions.gotHello, (s, p) => ({
+  hello: p.hello
+}))
+
 interface FooProps {
-  SomethingElse: string
+  someAttribute: string
 }
 
 const mapStateToProps = (state: RootState, own: FooProps) => ({
-  value: state.home.SomeValue,
+  hello: state.foo.hello,
 });
 
 const dispatchProps = {
@@ -24,23 +39,27 @@ const dispatchProps = {
   ...FooActions
 };
 
-const stateProps = rtypeof(mapStateToProps);
-type AllProps = typeof stateProps & typeof dispatchProps & FooProps;
+class FooRefs {
+  name: HTMLInputElement
+}
 
 export const Foo = connect(mapStateToProps, dispatchProps)(p => {
 
-  let myRequest = new portyr.HelloWorld();
+  let refs = new FooRefs();
 
-  let myValues = {
-    someValue: ""
+  const fetchHello = () => {
+   const request = new portyr.HelloWorld();
+   request.name = refs.name.value;
+   p.fetchHello(request);
   }
 
   return (
     <div>
       <div>Please eat now!</div>
-      <div>{myValues.someValue}</div>
+      <input name="name" ref={c => refs.name = c} />
+      <div>{p.hello}</div>
       <button onClick={p.goHome} >Go home</button>
-      <button onClick={() => p.fetchHello(myRequest)} >Give me a hello</button>
+      <button onClick={fetchHello} >Give me a hello</button>
     </div>
   );
 });
