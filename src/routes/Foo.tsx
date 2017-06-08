@@ -32,6 +32,13 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
    p.sendHello(request);
   };
 
+  const fetchMultiply = () => {
+    const request = new portyr.MultiplyIntegers();
+    request.first = 1;
+    request.second = 2;
+    p.sendMultiply(request);
+  };
+
   const nameChanged = (e: ChangeEvent<HTMLInputElement>) => {
     p.updateName({name: e.target.value});
   };
@@ -41,6 +48,7 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
       <div>Please eat now!</div>
       <input name="name" value={p.name} onChange={nameChanged} />
       <div>{p.hello}</div>
+      <button onClick={fetchMultiply} >Go home</button>
       <button onClick={p.goHome} >Go home</button>
       <button onClick={fetchHello} >Give me a hello</button>
     </div>

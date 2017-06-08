@@ -5,6 +5,7 @@ import { routerReducer, routerMiddleware } from "react-router-redux";
 import { HomeReducer, HomeState } from "../routes/Home";
 import { serviceStackMiddleware } from "../tools/servicestack";
 import { FooReducer, FooState } from "./Foo";
+import { constants } from "../constants";
 
 declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 
@@ -32,7 +33,8 @@ const rootEpic = combineEpics(
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const servicestack = serviceStackMiddleware("/api");
+console.log(constants.API_BASEURL);
+const servicestack = serviceStackMiddleware(constants.API_BASEURL);
 
 // store singleton instance
 export const store = createStore(

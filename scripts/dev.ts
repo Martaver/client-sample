@@ -4,6 +4,7 @@ import { Environment } from "./Environment";
 import * as express from "express";
 import * as proxy from "express-http-proxy";
 import * as path from "path";
+import { config } from "./config";
 
 // paths
 const SRC_PATH = "src/";
@@ -17,7 +18,7 @@ cp("-rf", "assets/*", BUILD_PATH);
 
 // start dev-server
 const fuse = new FuseBox({
-  homeDir: "../" + SRC_PATH,
+  homeDir: `../${SRC_PATH}`,
   tsConfig: `../${SRC_PATH}tsconfig.json`,
   output: `../${BUILD_PATH}$name.js`,
   sourceMaps: true,
@@ -27,7 +28,8 @@ const fuse = new FuseBox({
       dest: "assets"
     }),
     EnvPlugin({
-      NODE_ENV: Environment.Development
+      NODE_ENV: Environment.Development,
+      API_BASEURL: config.api_path, //Provide path only so that we direct to our proxy.
     }),
     ImageBase64Plugin({
       useDefault: true
@@ -38,9 +40,9 @@ const fuse = new FuseBox({
 fuse.dev({port: 3000, root: false }, server => {
   const app = server.httpServer.app as express.Application;
   app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
-  app.use("/api", proxy("localhost:5000"));
+  app.use(config.api_path, proxy(config.api_host));
   app.use("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, `/../${BUILD_PATH}/index.html`));
+    res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
   });
 });
 

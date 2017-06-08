@@ -6,6 +6,9 @@
     "no-implicit-any": true,
     "linebreak-style": [
       "CRLF"
+    ],
+    "quotemark": [
+      "double"
     ]
   }
 }
