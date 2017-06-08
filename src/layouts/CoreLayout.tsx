@@ -8,15 +8,15 @@ import { style } from "typestyle";
 import * as colors from "../styles/colors";
 
 const styles = {
-  clr: style({
-    color: colors.blue
+  myHeader: style({
+    color: colors.redDark
   })
 };
 
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
   <div>
     <Toolbar Something={"Welcome to Portyr"} />
-    <h1 className={styles.clr}>Testing Core Layouts</h1>
+    <h1 className={styles.myHeader}>Testing Hello Akatsuki</h1>
     {children}
   </div>
 );

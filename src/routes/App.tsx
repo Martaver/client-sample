@@ -21,5 +21,5 @@ export const App: React.StatelessComponent<{}> = () => (
         </CoreLayout>
       </ConnectedRouter>
     </Provider>
-    </div>
+  </div>
 );

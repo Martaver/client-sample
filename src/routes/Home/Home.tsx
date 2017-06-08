@@ -7,6 +7,7 @@ import { MapStateToPropsParam, MapDispatchToPropsFunction, MapDispatchToPropsPar
 import { connect } from "../../tools/react-redux-typescript";
 
 import { style } from "typestyle";
+import { RouteComponentProps } from "react-router";
 
 const styles = {
   welcome: style({
@@ -15,7 +16,7 @@ const styles = {
 };
 
 interface HomeProps {
-  myOptions: string;
+
 }
 
 const mapStateToProps = (state: RootState, own: HomeProps) => ({
