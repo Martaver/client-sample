@@ -15,8 +15,7 @@ interface FooProps {
 }
 
 const mapStateToProps = (state: RootState, own: FooProps) => ({
-  hello: state.foo.hello,
-  name: state.foo.name
+  ...state.foo
 });
 
 const dispatchProps = {
@@ -34,8 +33,8 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
 
   const fetchMultiply = () => {
     const request = new portyr.MultiplyIntegers();
-    request.first = 1;
-    request.second = 2;
+    request.first = p.first;
+    request.second = p.second;
     p.sendMultiply(request);
   };
 
@@ -43,12 +42,26 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
     p.updateName({name: e.target.value});
   };
 
+  const firstChanged = (e: ChangeEvent<HTMLInputElement>) => {
+    p.updateFirst({first: Number.parseInt(e.target.value)});
+  };
+
+  const secondChanged = (e: ChangeEvent<HTMLInputElement>) => {
+    p.updateSecond({second: Number.parseInt(e.target.value)});
+  };
+
   return (
     <div>
-      <div>Please eat now!</div>
+      <div>Please enter name:</div>
       <input name="name" value={p.name} onChange={nameChanged} />
-      <div>{p.hello}</div>
-      <button onClick={fetchMultiply} >Go home</button>
+      <div>First number:</div>
+      <input name="name" value={p.first} onChange={firstChanged} />
+      <div>Second number:</div>
+      <input name="name" value={p.second} onChange={secondChanged} />
+
+      <div>Product I can change logic is... {p.product}</div>
+
+      <button onClick={fetchMultiply} >Multiply</button>
       <button onClick={p.goHome} >Go home</button>
       <button onClick={fetchHello} >Give me a hello</button>
     </div>

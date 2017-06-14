@@ -23,6 +23,12 @@
  - /src and /scripts get their own tsconfig.json because they compile to different environments. E.g. TS in `scripts` compiles to es6 and runs in node, and TS in `src` compiles to es5 to run in the browser.
 
 
+## CSS
+
+CSS is controlled by Typestyle.  It's a typescript based CSS framework that provides advanced SASS-like features, such as mixins, variables & isolation (CSS Modules), but without the separate libass processor.
+
+http://typestyle.io/#/
+
  ## Useful tools & links
 
  React Router v4 tester: 

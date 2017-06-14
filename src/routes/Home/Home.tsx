@@ -11,7 +11,7 @@ import { RouteComponentProps } from "react-router";
 
 const styles = {
   welcome: style({
-    color: colors.red
+    color: colors.redDark
   })
 };
 

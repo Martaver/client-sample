@@ -1,5 +1,5 @@
 import { HelloWorld, HelloWorldResponse, MultiplyIntegers, MultiplyIntegersResponse } from "../types/portyr-api";
-import { receive, send } from "../tools/servicestack";
+import {Method, receive,   send} from '../tools/servicestack';
 import { reducerWithInitialState } from "typescript-fsa-reducers";
 import actionCreatorFactory from "typescript-fsa";
 
@@ -9,7 +9,9 @@ export const FooActions = {
   sendHello: send<HelloWorld>("HELLO_WORLD"),
   receiveHello: receive<HelloWorldResponse>("HELLO_WORLD"),
   updateName: actionCreator<{name: string}>("NAME_CHANGE"),
-  sendMultiply: send<MultiplyIntegers>("MULTIPLY_INTEGERS"),
+  updateFirst: actionCreator<{first: number}>("UPDATE_FIRST"),
+  updateSecond: actionCreator<{second: number}>("UPDATE_SECOND"),
+  sendMultiply: send<MultiplyIntegers>("MULTIPLY_INTEGERS", Method.Post),
   receiveMultiply: receive<MultiplyIntegersResponse>("MULTIPLY_INTEGERS"),
 };
 
@@ -35,6 +37,14 @@ export const FooReducer = reducerWithInitialState(INITIAL_STATE)
 
   .case(FooActions.receiveHello, (s, p) => ({...s,
     hello: p.hello,
+  }))
+
+  .case(FooActions.updateFirst, (s,p) => ({...s,
+    first: p.first
+  }))
+
+  .case(FooActions.updateSecond, (s,p) => ({...s,
+    second: p.second
   }))
 
   .case(FooActions.receiveMultiply, (s, p) => ({...s,

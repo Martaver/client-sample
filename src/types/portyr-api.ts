@@ -1,9 +1,9 @@
 /* tslint:disable */
 // This is a generated file - do not edit.
-// Last generated: Thu Jun 08 2017 18:25:15 GMT+0300 (FLE Summer Time).
+// Last generated: Wed Jun 14 2017 18:18:43 GMT+0300 (FLE Summer Time).
 
 /* Options:
-Date: 2017-06-08 18:25:14
+Date: 2017-06-14 18:18:43
 Version: 1.041
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: http://localhost:5000

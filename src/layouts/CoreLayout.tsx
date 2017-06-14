@@ -9,7 +9,7 @@ import * as colors from "../styles/colors";
 
 const styles = {
   myHeader: style({
-    color: colors.redDark
+    color: colors.blue
   })
 };
 
