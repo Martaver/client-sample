@@ -1,6 +1,6 @@
 import * as React from "react";
 import { RootState } from "../store/index";
-import { Home } from "../routes/Home/index";
+import { HomeHello } from "../routes/Home/index";
 import { RouteComponentProps } from "react-router";
 import { Toolbar } from "./Toolbar";
 

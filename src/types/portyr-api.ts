@@ -1,9 +1,9 @@
 /* tslint:disable */
 // This is a generated file - do not edit.
-// Last generated: Wed Jun 14 2017 18:18:43 GMT+0300 (FLE Summer Time).
+// Last generated: Wed Jun 21 2017 15:52:56 GMT+0300 (FLE Summer Time).
 
 /* Options:
-Date: 2017-06-14 18:18:43
+Date: 2017-06-21 15:52:56
 Version: 1.041
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: http://localhost:5000
@@ -39,8 +39,7 @@ export class HelloWorldResponse
 {
     hello: string;
     someOtherProperty: string;
-    joasInfo: string;
-    numberOfTesticlesDaleHas: number;
+    numberOfEyesAkaHas: number;
 }
 
 // @Route("/multiply")

@@ -1,4 +1,4 @@
-import { FooActions } from "../store/Foo";
+
 import * as React from "react";
 import { RootState } from "../store/index";
 import { connect } from "../tools/react-redux-typescript";
@@ -9,6 +9,7 @@ import { push } from "react-router-redux";
 import { JsonServiceClient } from "servicestack-client/src";
 import { reducerWithInitialState } from "typescript-fsa-reducers";
 import { ChangeEvent } from "react";
+import { FooActions } from "../store/Foo.store";
 
 interface FooProps {
   someAttribute: string;
@@ -60,6 +61,8 @@ export const Foo = connect(mapStateToProps, dispatchProps)(p => {
       <input name="name" value={p.second} onChange={secondChanged} />
 
       <div>Product I can change logic is... {p.product}</div>
+
+      <div>HELLO {p.hello}</div>
 
       <button onClick={fetchMultiply} >Multiply</button>
       <button onClick={p.goHome} >Go home</button>

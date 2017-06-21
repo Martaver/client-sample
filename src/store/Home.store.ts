@@ -1,5 +1,13 @@
-import { HomeActions } from "./Home.actions";
 import { reducerWithInitialState } from "typescript-fsa-reducers";
+import actionCreatorFactory from "typescript-fsa";
+
+const actionCreator = actionCreatorFactory("HOME");
+
+export const HomeActions = {
+  setNarf: actionCreator<{someString: string}>("SET_NARF"),
+  setFran: actionCreator<{someNumber: number}>("SET_FRAN"),
+};
+
 
 const INITIAL_STATE = {
   SomeValue: "FRAN",
