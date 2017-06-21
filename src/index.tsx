@@ -5,7 +5,7 @@ import { Environment } from "../scripts/Environment";
 import { normalize, setupPage } from "csstips";
 import * as injectTapEventPlugin from "react-tap-event-plugin";
 
-injectTapEventPlugin();
+// injectTapEventPlugin();
 
 ReactDOM.render(<App />, document.getElementById("app-container"));
 
