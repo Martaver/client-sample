@@ -3,6 +3,9 @@ import * as ReactDOM from "react-dom";
 import { App } from "./routes/App";
 import { Environment } from "../scripts/Environment";
 import { normalize, setupPage } from "csstips";
+import * as injectTapEventPlugin from "react-tap-event-plugin";
+
+injectTapEventPlugin();
 
 ReactDOM.render(<App />, document.getElementById("app-container"));
 

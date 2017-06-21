@@ -11,7 +11,7 @@ import * as portyr from "../types/portyr-api";
 import { Dispatch } from "redux";
 import { Foo } from "./Foo";
 import { Profile, ProfileByType } from "./Profile";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 export const App: React.StatelessComponent<{}> = () => (
   <div>
