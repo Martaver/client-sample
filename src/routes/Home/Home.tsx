@@ -32,10 +32,9 @@ const mapDispatchToProps = ({
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-    <Toolbar>Hello?</Toolbar>
+    <Toolbar>Hello!</Toolbar>
     <FlatButton>Click me!</FlatButton>
     <h1 className={styles.welcome}>Welcome {p.SomeValue}!</h1>
-    <h2>This is where you play with Prismic.io</h2>
 
   </div>
 ));

@@ -66,7 +66,7 @@ INITIAL_STATE.services.setValue(1, {
 INITIAL_STATE.services.setValue(2, {
   id: 2,
   companyId: 1,
-  name: "Clash of Clans",
+  name: "Clash of Clans app",
   purposeIds: [5]
 });
 

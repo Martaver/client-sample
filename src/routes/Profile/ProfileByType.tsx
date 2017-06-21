@@ -8,22 +8,21 @@ import { style } from "typestyle";
 import { RouteComponentProps } from "react-router";
 import { ProfileActions, Service, Purpose, Company, DataType } from "../../store/Profile.store";
 
-import { flatMap, uniqBy } from "lodash";
+import * as _ from "lodash";
 
 import { createSelector } from "reselect";
 import { companySelector } from "./Profile";
-import * as Enumerable from "linq-es2015";
 
 interface ICompanyModel extends Company {
   dataTypes: IDataTypeModel[];
 }
 
 interface IDataTypeModel extends DataType {
-  services: Service[];
+  services: IServiceModel[];
 }
 
 interface IServiceModel extends Service {
-  // purposes: IPurposeModel[];
+  purposes: IPurposeModel[];
 }
 
 interface IPurposeModel extends Purpose {
@@ -38,14 +37,39 @@ const modelSelector = createSelector(
 
     const company = profile.companies.getValue(profile.currentCompanyId);
 
-    const allDataTypes = [];
+    const allServices = _(company.serviceIds)
+      .map(id => profile.services.getValue(id))
+      .value();
 
-    const getServicesContainingDataType = () => [];
-    const getPurposesContainingDataType = () => [];
+    const allPurposes = _(allServices)
+      .flatMap(s => s.purposeIds)
+      .map(id => profile.purposes.getValue(id))
+      .value();
 
     return ({
       ...(company),
-      dataTypes: []
+      dataTypes: _(allPurposes)
+        .flatMap(p => p.dataTypeIds)
+        .uniq()
+        .map(id => profile.dataTypes.getValue(id))
+        .map(dataType => ({
+          ...dataType,
+          services: _(allServices)
+            .filter(s => s.purposeIds
+              .map(id => profile.purposes.getValue(id))
+              .filter(p => p.dataTypeIds.includes(dataType.id))
+              .length > 0
+            )
+            .map(service => ({
+              ...service,
+              purposes: _(service.purposeIds)
+                .map(id => profile.purposes.getValue(id))
+                .filter(p => p.dataTypeIds.includes(dataType.id))
+                .value()
+            }))
+            .value()
+        }))
+        .value()
     });
   }
 );
@@ -74,25 +98,24 @@ const mapDispatchToProps = ({
 export const ProfileByType = connect(mapStateToProps, mapDispatchToProps)(p => {
 
   const renderDataType = (dataType: IDataTypeModel) => (
-    <h2 key={dataType.id}>
-      {dataType.name}
+    <div>
+      <h2 key={dataType.id}>
+        {dataType.name}
+      </h2>
       { dataType.services.map(renderService) }
-    </h2>
+    </div>
   );
 
-  // const renderPurpose = (purpose: IPurpose) => (
-  //   <div key={purpose.id}>
-  //     <h3>{purpose.name}</h3>
-  //     <ul>
-  //       { purpose.dataTypeIds.map(id => p.dataTypes[id]).map(renderDataType)}
-  //     </ul>
-  //   </div>
-  // );
+  const renderPurpose = (purpose: IPurposeModel) => (
+    <li key={purpose.id}>
+      {purpose.name}
+    </li>
+  );
 
   const renderService = (service: IServiceModel) => (
     <div key={service.id}>
       <h3>{service.name}</h3>
-      {/*{ service.purposeIds.map(id => p.purposes[id]).map(renderPurpose) }*/}
+      <ul>{ service.purposes.map(renderPurpose) }</ul>
     </div>
   );
 
