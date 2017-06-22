@@ -1,4 +1,4 @@
-import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin } from "fuse-box";
+import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin, WebIndexPlugin } from "fuse-box";
 import { cp, mkdir, rm } from "shelljs";
 import { Environment } from "./Environment";
 import * as express from "express";
@@ -34,6 +34,10 @@ const fuse = new FuseBox({
     }),
     ImageBase64Plugin({
       useDefault: true
+    }),
+    WebIndexPlugin({
+      title: "Portyr",
+      template: `../${BUILD_PATH}index.html`
     }),
   ],
 });
