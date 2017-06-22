@@ -1,3 +1,3 @@
 #!/bin/bash
 
-aws s3 cp ./../dist/ s3://demo.portyr.com --recursive
+aws s3 sync ./../dist/ s3://demo.portyr.com --acl public-read
