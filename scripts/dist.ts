@@ -1,16 +1,15 @@
-import { EnvPlugin, FuseBox, UglifyJSPlugin } from "fuse-box";
+import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin } from "fuse-box";
 import { cp, mkdir, rm } from "shelljs";
-
-// dependencies
-// tslint:disable-next-line:no-var-requires
-const packageJson = require("../package.json");
-const dependencyExceptions = ["rxjs"];
-const prodDependencies = Object.values(packageJson.dependencies)
-  .filter(moduleName => !dependencyExceptions.includes(moduleName));
+import { Environment } from "./Environment";
+import * as express from "express";
+import * as proxy from "express-http-proxy";
+import * as path from "path";
+import * as url from "url";
+import { config } from "./config";
 
 // paths
 const SRC_PATH = "src/";
-const BUILD_PATH = "dist/";
+const BUILD_PATH = "dist/"; // Relative to the HomeDir.
 
 // clean build folder
 rm("-rf", BUILD_PATH);
@@ -18,17 +17,31 @@ mkdir("-p", BUILD_PATH);
 // copy assets
 cp("-rf", "assets/*", BUILD_PATH);
 
-// create bundles
-FuseBox.init({
-  homeDir: SRC_PATH,
-  tsConfig: SRC_PATH + "tsconfig.json",
-  sourceMaps: true,
-  log: false,
+// start dev-server
+const fuse = new FuseBox({
+  homeDir: `../${SRC_PATH}`,
+  tsConfig: `../${SRC_PATH}tsconfig.json`,
+  output: `../${BUILD_PATH}$name.js`,
+  sourceMaps: false,
   plugins: [
-    EnvPlugin({ NODE_ENV: "production" }),
-    UglifyJSPlugin({}),
+    CopyPlugin({
+      files: [`../${SRC_PATH}/styles/*.css`],
+      dest: "assets"
+    }),
+    EnvPlugin({
+      NODE_ENV: Environment.Development,
+      API_BASEURL: config.api_path, //Provide path only so that we direct to our proxy.
+    }),
+    ImageBase64Plugin({
+      useDefault: true
+    }),
   ],
-}).bundle({
-  [BUILD_PATH + "app.js"]: `>index.tsx - ${prodDependencies.join(" - ")}`,
-  [BUILD_PATH + "vendor.js"]: `${prodDependencies.join(" + ")}`,
 });
+
+fuse.bundle("app")
+  .instructions("!> [index.dev.tsx]");
+
+fuse.bundle("vendor")
+  .instructions("~ index.dev.tsx");
+
+fuse.run();

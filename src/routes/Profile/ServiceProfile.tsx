@@ -72,7 +72,7 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
 
   const renderPurpose = (purpose: IModelPurpose) => (
     <div key={purpose.id}>
-      <h3>{purpose.name}</h3>
+      For the purpose of <b>{purpose.name}</b>, we collect:
       <ul>
         { purpose.dataTypes.map(renderDataType)}
       </ul>
@@ -90,7 +90,7 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
     <div>
       { p.service && (
         <div>
-          <h2>{p.service.name}!</h2>
+          <h2>{p.service.name}</h2>
           { p.service.purposes.map(renderPurpose) }
         </div>
       )}

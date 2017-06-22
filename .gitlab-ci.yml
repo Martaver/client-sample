@@ -1,0 +1,8 @@
+use: portyr/builder:latest
+
+deploy:
+ script:  
+  - yarn dist
+  - chmod +x ./scripts/deploy.sh  
+  - cd scripts
+  - ./deploy.sh  
