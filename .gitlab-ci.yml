@@ -2,6 +2,7 @@ image: portyr/builder:latest
 
 deploy:
  script:  
+  - yarn
   - yarn dist
   - chmod +x ./scripts/deploy.sh  
   - cd scripts
