@@ -11,65 +11,68 @@ import { ProfileActions, Service, Purpose, Company, DataType } from "../../store
 import * as _ from "lodash";
 
 import { createSelector } from "reselect";
-import { companySelector } from "./Profile";
 
-interface ICompanyModel extends Company {
-  dataTypes: IDataTypeModel[];
+interface IModelCompany extends Company {
+  dataTypes: IModelDataType[];
 }
 
-interface IDataTypeModel extends DataType {
-  services: IServiceModel[];
+interface IModelDataType extends DataType {
+  services: IModelService[];
 }
 
-interface IServiceModel extends Service {
-  purposes: IPurposeModel[];
+interface IModelService extends Service {
+  purposes: IModelPurpose[];
 }
 
-interface IPurposeModel extends Purpose {
+interface IModelPurpose extends Purpose {
 
 }
-
-
 
 const modelSelector = createSelector(
   (s: RootState) => s.profile,
-  (profile): ICompanyModel => {
+  (profile): IModelCompany => {
 
     const company = profile.companies.getValue(profile.currentCompanyId);
 
-    const allServices = _(company.serviceIds)
+    const companyServices = _(company.serviceIds)
       .map(id => profile.services.getValue(id))
       .value();
 
-    const allPurposes = _(allServices)
+    const companyPurposes = _(companyServices)
       .flatMap(s => s.purposeIds)
       .map(id => profile.purposes.getValue(id))
       .value();
 
+    const companyDataTypes = _(companyPurposes)
+      .flatMap(p => p.dataTypeIds)
+      .uniq()
+      .map(id => profile.dataTypes.getValue(id))
+      .value();
+
+    const getServicesByDataType = (dataTypeId: number) => _(companyServices)
+      .filter(s => s.purposeIds
+        .map(id => profile.purposes.getValue(id))
+        .filter(p => p.dataTypeIds.includes(dataTypeId))
+        .length > 0
+      )
+      .value();
+
+    const getPurposesByServiceAndDataType = (service: Service, dataTypeId: number) => _(service.purposeIds)
+      .map(id => profile.purposes.getValue(id))
+      .filter(p => p.dataTypeIds.includes(dataTypeId))
+      .value();
+
     return ({
       ...(company),
-      dataTypes: _(allPurposes)
-        .flatMap(p => p.dataTypeIds)
-        .uniq()
-        .map(id => profile.dataTypes.getValue(id))
+      dataTypes: companyDataTypes
         .map(dataType => ({
           ...dataType,
-          services: _(allServices)
-            .filter(s => s.purposeIds
-              .map(id => profile.purposes.getValue(id))
-              .filter(p => p.dataTypeIds.includes(dataType.id))
-              .length > 0
-            )
+          services: getServicesByDataType(dataType.id)
             .map(service => ({
               ...service,
-              purposes: _(service.purposeIds)
-                .map(id => profile.purposes.getValue(id))
-                .filter(p => p.dataTypeIds.includes(dataType.id))
-                .value()
+              purposes: getPurposesByServiceAndDataType(service, dataType.id)
             }))
-            .value()
         }))
-        .value()
     });
   }
 );
@@ -95,24 +98,24 @@ const mapDispatchToProps = ({
   ...ProfileActions
 });
 
-export const ProfileByType = connect(mapStateToProps, mapDispatchToProps)(p => {
+export const CompanyProfile = connect(mapStateToProps, mapDispatchToProps)(p => {
 
-  const renderDataType = (dataType: IDataTypeModel) => (
-    <div>
-      <h2 key={dataType.id}>
+  const renderDataType = (dataType: IModelDataType) => (
+    <div key={dataType.id}>
+      <h2>
         {dataType.name}
       </h2>
       { dataType.services.map(renderService) }
     </div>
   );
 
-  const renderPurpose = (purpose: IPurposeModel) => (
+  const renderPurpose = (purpose: IModelPurpose) => (
     <li key={purpose.id}>
       {purpose.name}
     </li>
   );
 
-  const renderService = (service: IServiceModel) => (
+  const renderService = (service: IModelService) => (
     <div key={service.id}>
       <h3>{service.name}</h3>
       <ul>{ service.purposes.map(renderPurpose) }</ul>

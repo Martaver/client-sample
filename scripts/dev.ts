@@ -4,6 +4,7 @@ import { Environment } from "./Environment";
 import * as express from "express";
 import * as proxy from "express-http-proxy";
 import * as path from "path";
+import * as url from "url";
 import { config } from "./config";
 
 // paths
@@ -38,12 +39,22 @@ const fuse = new FuseBox({
 });
 
 fuse.dev({port: 3000, root: false }, server => {
+  const dist = path.resolve(BUILD_PATH);
   const app = server.httpServer.app as express.Application;
-  app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
+  // app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
   app.use(config.api_path, proxy(config.api_host));
-  app.use("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
+
+  app.get("*", function(req, res) {
+    const parsedUrl = url.parse(req.url);
+    const pathname = `.${parsedUrl.pathname}`;
+    return path.parse(pathname).ext
+      ? res.sendFile(path.join(dist, req.url))
+      : res.sendFile(path.join(dist, "index.html"));
   });
+
+  // app.use("*", (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
+  // });
 });
 
 fuse.bundle("app")

@@ -10,7 +10,7 @@ import { JsonServiceClient } from "servicestack-client";
 import * as portyr from "../types/portyr-api";
 import { Dispatch } from "redux";
 import { Foo } from "./Foo";
-import { Profile, ProfileByType } from "./Profile";
+import { Profile } from "./Profile";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 export const App: React.StatelessComponent<{}> = () => (
@@ -21,8 +21,7 @@ export const App: React.StatelessComponent<{}> = () => (
           <CoreLayout>
             <Route exact={true} path="/" component={Home as any} />
             <Route path="/foo" component={Foo as any} />
-            <Route path="/profile" component={Profile as any} />
-            <Route path="/profile-by-type" component={ProfileByType as any} />
+            <Route path="/company" component={Profile as any} />
           </CoreLayout>
         </ConnectedRouter>
       </Provider>
