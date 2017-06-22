@@ -88,10 +88,9 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
 
   return (
     <div>
-      Testing
       { p.service && (
         <div>
-          <h1 className={styles.welcome}>{p.service.name}!</h1>
+          <h2>{p.service.name}!</h2>
           { p.service.purposes.map(renderPurpose) }
         </div>
       )}

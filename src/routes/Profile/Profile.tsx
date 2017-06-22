@@ -16,6 +16,10 @@ import { ServiceProfile } from "./ServiceProfile";
 const styles = {
   welcome: style({
     color: colors.redDark
+  }),
+  link: style({
+    textDecoration: 'underline',
+    cursor: 'pointer'
   })
 };
 
@@ -24,17 +28,21 @@ interface ProfileProps {
 }
 
 const mapStateToProps = (state: RootState, own: ProfileProps) => ({
-
+  company: state.profile.companies.getValue(state.profile.currentCompanyId)
 });
 
 const mapDispatchToProps = ({
+  goCompany: () => push(`/company`),
   ...ProfileActions,
 });
 
 export const Profile = connect(mapStateToProps, mapDispatchToProps)(p => (
-  <Switch>
-    {/* Update this to be relative, not absolute.*/}
-    <Route path="/company" exact={true} component={CompanyProfile as any} />
-    <Route path="/company/service/:serviceId" component={ ServiceProfile } />
-  </Switch>
+  <div>
+    <h1 onClick={ p.goCompany } className={styles.link}>{p.company.name}</h1>
+    <Switch>
+      {/* Update this to be relative, not absolute.*/}
+      <Route path="/company" exact={true} component={CompanyProfile as any} />
+      <Route path="/company/service/:serviceId" component={ ServiceProfile } />
+    </Switch>
+  </div>
 ));

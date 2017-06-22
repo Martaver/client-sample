@@ -40,8 +40,6 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
     return (
       <div className={styles.toolbar}>
         <div className={styles.logo} alt="Portyr" />
-        { this.props.myProperty }
-        { this.props.Something }
       </div>
     );
   }

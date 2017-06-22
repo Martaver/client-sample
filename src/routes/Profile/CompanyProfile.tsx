@@ -80,6 +80,10 @@ const modelSelector = createSelector(
 const styles = {
   welcome: style({
     color: colors.redDark
+  }),
+  link: style({
+    textDecoration: 'underline',
+    cursor: 'pointer'
   })
 };
 
@@ -88,13 +92,11 @@ interface ProfileByTypeProps {
 }
 
 const mapStateToProps = (state: RootState, own: ProfileByTypeProps) => ({
-  company: modelSelector(state),
-  services: state.profile.services,
-  purposes: state.profile.purposes,
-  dataTypes: state.profile.dataTypes,
+  company: modelSelector(state)
 });
 
 const mapDispatchToProps = ({
+  goService: (id: number) => push(`/company/service/${id}`),
   ...ProfileActions
 });
 
@@ -102,11 +104,16 @@ export const CompanyProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
 
   const renderDataType = (dataType: IModelDataType) => (
     <div key={dataType.id}>
-      <h2>
-        {dataType.name}
-      </h2>
-      { dataType.services.map(renderService) }
+      <b>{dataType.name}</b> collected by:
+      <ul>{ dataType.services.map(renderService) }</ul>
     </div>
+  );
+
+  const renderService = (service: IModelService) => (
+    <li key={service.id}>
+      <span className={styles.link} onClick={ () => p.goService(service.id) }>{service.name}</span> for:
+      <ul>{ service.purposes.map(renderPurpose) }</ul>
+    </li>
   );
 
   const renderPurpose = (purpose: IModelPurpose) => (
@@ -115,16 +122,8 @@ export const CompanyProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
     </li>
   );
 
-  const renderService = (service: IModelService) => (
-    <div key={service.id}>
-      <a href={`/company/service/${service.id}`}>{service.name}</a>
-      <ul>{ service.purposes.map(renderPurpose) }</ul>
-    </div>
-  );
-
   return (
     <div>
-      <h1 className={styles.welcome}>{p.company.name}</h1>
       { p.company.dataTypes.map(renderDataType) }
     </div>
   );

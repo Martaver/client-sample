@@ -15,7 +15,6 @@ const styles = {
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
   <div>
     <Toolbar Something={"Welcome to Portyr"} />
-    <h1 className={styles.myHeader}>Testing Hello Akatsuki</h1>
     {children}
   </div>
 );
