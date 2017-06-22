@@ -55,10 +55,7 @@ interface ProfileProps extends RouteComponentProps<{serviceId: number}> {
 }
 
 const mapStateToProps = (state: RootState, own: ProfileProps) => ({
-  company: modelSelector(state),
-  services: state.profile.services,
-  purposes: state.profile.purposes,
-  dataTypes: state.profile.dataTypes,
+  service: modelSelector(state).services.find(s => s.id == own.match.params.serviceId)
 });
 
 const mapDispatchToProps = ({
@@ -85,15 +82,19 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
   const renderService = (service: IModelService) => (
     <div key={service.id}>
       <h2>{service.name}</h2>
-      { service.purposes.map(renderPurpose) }
+
     </div>
   );
 
   return (
     <div>
-      <h1 className={styles.welcome}>{p.company.name}!</h1>
-      { p.match.params.serviceId }
-      { p.company.services.map(renderService) }
+      Testing
+      { p.service && (
+        <div>
+          <h1 className={styles.welcome}>{p.service.name}!</h1>
+          { p.service.purposes.map(renderPurpose) }
+        </div>
+      )}
     </div>
   );
 });
