@@ -50,7 +50,7 @@ const styles = {
   })
 };
 
-interface ProfileProps {
+interface ProfileProps extends RouteComponentProps<{serviceId: number}> {
 
 }
 
@@ -92,6 +92,7 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
   return (
     <div>
       <h1 className={styles.welcome}>{p.company.name}!</h1>
+      { p.match.params.serviceId }
       { p.company.services.map(renderService) }
     </div>
   );

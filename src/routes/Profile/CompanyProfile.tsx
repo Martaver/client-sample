@@ -117,7 +117,7 @@ export const CompanyProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
 
   const renderService = (service: IModelService) => (
     <div key={service.id}>
-      <h3>{service.name}</h3>
+      <a href={`/company/service/${service.id}`}>{service.name}</a>
       <ul>{ service.purposes.map(renderPurpose) }</ul>
     </div>
   );
