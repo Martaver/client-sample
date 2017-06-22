@@ -30,7 +30,7 @@ const fuse = new FuseBox({
     }),
     EnvPlugin({
       NODE_ENV: Environment.Development,
-      API_BASEURL: config.api_path, //Provide path only so that we direct to our proxy.
+      API_BASEURL: config.dist.api_base_url, //Provide path only so that we direct to our proxy.
     }),
     ImageBase64Plugin({
       useDefault: true

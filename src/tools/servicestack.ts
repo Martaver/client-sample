@@ -58,6 +58,7 @@ export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) =
 
   const client = new JsonServiceClient(baseUrl);
 
+
   return (next: any) => (action: AnyAction) => {
 
     const type = action.type as string;
@@ -66,7 +67,7 @@ export const serviceStackMiddleware = (baseUrl: string) => (store: Store<any>) =
 
       const name = type.substring(prefix.length+1);
       const request = action as SsRequestAction;
-      console.log('sending to: ', baseUrl);
+
       //Send the request, letting ServiceStack handle the plumbing.
       client.send(methodOf(request.payload.method), request.payload.request, request.payload.args, request.payload.url)
 

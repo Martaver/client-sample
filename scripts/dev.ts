@@ -30,7 +30,7 @@ const fuse = new FuseBox({
     }),
     EnvPlugin({
       NODE_ENV: Environment.Development,
-      API_BASEURL: config.api_path, //Provide path only so that we direct to our proxy.
+      API_BASEURL: config.dev.api_base_url, //Provide path only so that we direct to our proxy.
     }),
     ImageBase64Plugin({
       useDefault: true
@@ -41,7 +41,6 @@ const fuse = new FuseBox({
 fuse.dev({port: 3000, root: false }, server => {
   const app = server.httpServer.app as express.Application;
   app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
-  app.use(config.api_path, proxy(config.api_host));
   app.use("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
   });
