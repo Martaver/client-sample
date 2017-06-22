@@ -1,4 +1,4 @@
-use: portyr/builder:latest
+image: portyr/builder:latest
 
 deploy:
  script:  
