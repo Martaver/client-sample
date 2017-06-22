@@ -35,6 +35,6 @@ export const Profile = connect(mapStateToProps, mapDispatchToProps)(p => (
   <Switch>
     {/* Update this to be relative, not absolute.*/}
     <Route path="/company" exact={true} component={CompanyProfile as any} />
-    <Route path="/company/service/{:serviceId}" component={ServiceProfile as any} />
+    <Route path="/company/service/:serviceId" component={ServiceProfile as any} />
   </Switch>
 ));
