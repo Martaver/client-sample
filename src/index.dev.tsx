@@ -15,3 +15,4 @@ const isStateful = (moduleName: string) =>
  * Also https://medium.com/@basarat/rethinking-hot-module-reloading-58ce15b5f496.
  */
 setStatefulModules(isStateful);
+
