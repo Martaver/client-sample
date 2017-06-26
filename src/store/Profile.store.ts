@@ -19,6 +19,7 @@ export class Service {
   id: number;
   companyId: number;
   name: string;
+  description: string;
   purposeIds: number[];
 }
 
@@ -26,6 +27,7 @@ export class Purpose {
   id: number;
   companyId: number;
   name: string;
+  explanation: string;
   dataTypeIds: number[];
 }
 
@@ -60,6 +62,7 @@ INITIAL_STATE.services.setValue(1, {
   id: 1,
   companyId: 1,
   name: "Supercell websites or mobile applications/platforms",
+  description: "This includes any and all websites or mobile application created by Supercell.",
   purposeIds: [1,2,3,4,5,6,7,8]
 });
 
@@ -67,6 +70,7 @@ INITIAL_STATE.services.setValue(2, {
   id: 2,
   companyId: 1,
   name: "Clash of Clans app",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   purposeIds: [5]
 });
 
@@ -74,6 +78,7 @@ INITIAL_STATE.purposes.setValue(1, {
   id: 1,
   companyId: 1,
   name: "Create your account",
+  explanation: "To use our services, we need to be able to ascertain that you are a real human and blah blah blah...",
   dataTypeIds: [1, 5]
 });
 
@@ -81,6 +86,7 @@ INITIAL_STATE.purposes.setValue(2, {
   id: 2,
   companyId: 1,
   name: "Provide services to you",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [6,7,8,9]
 });
 
@@ -88,6 +94,7 @@ INITIAL_STATE.purposes.setValue(3, {
   id: 3,
   companyId: 1,
   name: "Improve our service",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [2, 3, 4, 5]
 });
 
@@ -95,6 +102,7 @@ INITIAL_STATE.purposes.setValue(4, {
   id: 4,
   companyId: 1,
   name: "Contact you",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [6, 11, 12, 13]
 });
 
@@ -102,6 +110,7 @@ INITIAL_STATE.purposes.setValue(5, {
   id: 5,
   companyId: 1,
   name: "Conduct research and create reports for internal use",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [1, 2, 3, 4, 5, 8, 9, 13]
 });
 
@@ -109,6 +118,7 @@ INITIAL_STATE.purposes.setValue(6, {
   id: 6,
   companyId: 1,
   name: "Monitor, develop and analyze your use of the Service",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [1, 2, 3, 4, 5, 10, 11]
 });
 
@@ -116,6 +126,7 @@ INITIAL_STATE.purposes.setValue(7, {
   id: 7,
   companyId: 1,
   name: "User profiling",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [1, 2, 3, 4, 5, 7, 8, 9, 10, 13]
 });
 
@@ -123,6 +134,7 @@ INITIAL_STATE.purposes.setValue(8, {
   id: 8,
   companyId: 1,
   name: "Marketing, including targeted advertising",
+  explanation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lectus felis, aliquet eleifend eros hendrerit, tristique pulvinar leo. Sed tincidunt leo sed ipsum pellentesque, ac tincidunt sapien placerat. In ornare nisi nec dignissim blandit. Suspendisse faucibus nulla at dolor egestas consequat.",
   dataTypeIds: [1, 3, 4, 5, 6, 7, 8, 9, 10, 12]
 });
 

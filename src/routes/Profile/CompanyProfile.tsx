@@ -1,4 +1,4 @@
-import colors from "../../styles/colors";
+import { palette } from "../../theme";
 import * as React from "react";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
@@ -79,7 +79,7 @@ const modelSelector = createSelector(
 
 const styles = {
   welcome: style({
-    color: colors.redDark
+    color: palette.redDark
   }),
   link: style({
     textDecoration: 'underline',

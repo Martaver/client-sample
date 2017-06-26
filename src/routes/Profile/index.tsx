@@ -1,4 +1,4 @@
-import colors from "../../styles/colors";
+import { palette } from "../../theme";
 import * as React from "react";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
@@ -15,7 +15,7 @@ import { ServiceProfile } from "./ServiceProfile";
 
 const styles = {
   welcome: style({
-    color: colors.redDark
+    color: palette.redDark
   }),
   link: style({
     textDecoration: 'underline',
@@ -42,7 +42,10 @@ export const Profile = connect(mapStateToProps, mapDispatchToProps)(p => (
     <Switch>
       {/* Update this to be relative, not absolute.*/}
       <Route path="/company" exact={true} component={CompanyProfile as any} />
+      <Route path="/company/data-type/:dataTypeId" exact={true} component={CompanyProfile as any} />
       <Route path="/company/service/:serviceId" component={ ServiceProfile } />
     </Switch>
   </div>
 ));
+
+export default Profile;

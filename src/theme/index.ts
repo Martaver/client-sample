@@ -1,4 +1,5 @@
 import { rgba } from "csx";
+import { px } from "csx/lib";
 
 export const black = "#212121";
 export const white = "#f5f5f5";
@@ -13,7 +14,7 @@ export const blueDark = "#006b84";
 export const blueLight = "#33B3D3";
 export const blueStrong = "#39C6EA";
 
-export default {
+export const palette = {
   black,
   white,
   red,
@@ -24,4 +25,10 @@ export default {
   blueDark,
   blueLight,
   blueStrong
+};
+
+export const padding = px(6);
+
+export const spacing = {
+  padding,
 };

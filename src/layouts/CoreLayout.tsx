@@ -4,17 +4,23 @@ import { RouteComponentProps } from "react-router";
 import { Toolbar } from "./Toolbar";
 
 import { style } from "typestyle";
-import * as colors from "../styles/colors";
+import { spacing } from "../theme";
+import { px } from "csx/lib";
 
 const styles = {
-  myHeader: style({
-    color: colors.blue
-  })
+  container: style({
+    $debugName: 'container',
+    width: px(960),
+    margin: 'auto',
+    padding: spacing.padding
+  }),
 };
 
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
   <div>
     <Toolbar Something={"Welcome to Portyr"} />
-    {children}
+    <div className={ styles.container } >
+      {children}
+    </div>
   </div>
 );

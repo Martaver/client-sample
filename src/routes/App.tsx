@@ -12,9 +12,17 @@ import { Dispatch } from "redux";
 import { Foo } from "./Foo";
 import { Profile } from "./Profile";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import { style } from "typestyle/lib";
+import { palette } from "../theme/index";
+
+const styles = {
+  body: style({
+    background: palette.white
+  })
+};
 
 export const App: React.StatelessComponent<{}> = () => (
-  <div>
+  <div className={styles.body}>
     <MuiThemeProvider>
       <Provider store={store}>
         <ConnectedRouter history={history}>

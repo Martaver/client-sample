@@ -1,4 +1,4 @@
-import colors from "../../styles/colors";
+import { palette } from "../../theme";
 import * as React from "react";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
@@ -46,7 +46,7 @@ const modelSelector = createSelector(
 
 const styles = {
   welcome: style({
-    color: colors.redDark
+    color: palette.redDark
   })
 };
 
@@ -72,17 +72,12 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
 
   const renderPurpose = (purpose: IModelPurpose) => (
     <div key={purpose.id}>
+      <h3>{purpose.name}</h3>
+      <p>{purpose.explanation}</p>
       For the purpose of <b>{purpose.name}</b>, we collect:
       <ul>
         { purpose.dataTypes.map(renderDataType)}
       </ul>
-    </div>
-  );
-
-  const renderService = (service: IModelService) => (
-    <div key={service.id}>
-      <h2>{service.name}</h2>
-
     </div>
   );
 
@@ -91,6 +86,7 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
       { p.service && (
         <div>
           <h2>{p.service.name}</h2>
+          <p>{p.service.description}</p>
           { p.service.purposes.map(renderPurpose) }
         </div>
       )}
