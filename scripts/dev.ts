@@ -24,16 +24,6 @@ const fuse = new FuseBox({
   output: `../${BUILD_PATH}$name.js`,
   sourceMaps: true,
   plugins: [
-    [
-      SassPlugin({ }),
-      CSSModules(),
-      CSSResourcePlugin({
-        dist: `../${BUILD_PATH}/assets`,
-        resolve: (f) => `/assets/${f}`
-      }),
-      CSSPlugin(),
-      // PostCSSPlugin(),
-    ],
     CopyPlugin({
       files: [`../${SRC_PATH}/styles/*.css`],
       dest: "assets"
@@ -45,6 +35,18 @@ const fuse = new FuseBox({
     ImageBase64Plugin({
       useDefault: true
     }),
+    [
+      SassPlugin({
+        importer: true
+       }),
+      CSSModules(),
+      CSSResourcePlugin({
+        dist: `../${BUILD_PATH}/assets`,
+        resolve: (f) => `/assets/${f}`
+      }),
+      CSSPlugin(),
+      PostCSSPlugin(),
+    ],
     WebIndexPlugin({
       title: "Portyr",
       template: `../${BUILD_PATH}index.html`

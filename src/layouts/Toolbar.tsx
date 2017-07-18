@@ -14,63 +14,7 @@ import {Action} from "redux";
 import {flexRoot, content, flex} from "csstips/lib";
 import {RaisedButton} from "material-ui";
 
-<<<<<<< HEAD
-const styles = {
-
-
-
-  logo: style(content,{
-    $debugName: 'logo',
-    backgroundImage: url(quote(logo)),
-    backgroundRepeat: "no-repeat",
-
-    // marginLeft: spacing.paddingbig,
-
-
-
-    width: px(100),
-
-    padding: spacing.paddingbig,
-    // margin:'auto'
-
-    margin:'auto',
-    paddingRight:spacing.paddingbig
-
-
-  }),
-
-  toolbar: style(flexRoot, {
-    $debugName: 'toolbar',
-    height: px(100),
-    top: 0,
-    left: 0,
-    right: 0,
-    width: percent(100),
-    paddingLeft: spacing.paddingbig,
-   margin:'auto'
-    // marginLeft: spacing.paddingbig,
-    // marginRight: spacing.paddingbig
-
-
-  }),
-  toolbarLeft: style(content, {
-    width: px(200)
-  }),
-  toolbarCenter: style(flex, {}),
-  toolbarVerticalCenter: style(flex, {}),
-  toolbarRight: style(content, {
-    margin:'auto',
-    paddingRight:spacing.paddingbig
-
-
-
-
-
-  })
-};
-=======
 import styles from "./Toolbar.scss";
->>>>>>> f2e284f1bcfefa7c1105c9866869eaeb3b81c269
 
 interface OwnProps {
   Something: string;
