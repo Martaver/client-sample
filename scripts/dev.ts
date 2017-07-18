@@ -25,12 +25,14 @@ const fuse = new FuseBox({
   sourceMaps: true,
   plugins: [
     [
-      SassPlugin({
-        importer: true,
-      }),
+      SassPlugin({ }),
       CSSModules(),
+      CSSResourcePlugin({
+        dist: `../${BUILD_PATH}/assets`,
+        resolve: (f) => `/assets/${f}`
+      }),
       CSSPlugin(),
-      PostCSSPlugin(),
+      // PostCSSPlugin(),
     ],
     CopyPlugin({
       files: [`../${SRC_PATH}/styles/*.css`],
