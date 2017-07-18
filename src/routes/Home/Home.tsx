@@ -10,10 +10,12 @@ import { RouteComponentProps } from "react-router";
 import { HomeActions } from "../../store/Home.store";
 
 import { Toolbar, FlatButton } from "material-ui";
+import { px, linearGradient, rgba } from "csx/lib";
 
 const styles = {
-  welcome: style({
-    color: palette.blueDark
+  overlay: style({
+    height: px(600),
+    backgroundImage: linearGradient('to bottom', rgba(0, 111, 128, 0.6), "#00ddff")
   })
 };
 
@@ -32,9 +34,7 @@ const mapDispatchToProps = ({
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-    <FlatButton>Click me!</FlatButton>
-    <h1 className={styles.welcome}>Welcome {p.SomeValue}!</h1>
-    <h1 className={styles.welcome}>Welcome seb!</h1>
-
+    <section className={styles.overlay}></section>
+    <section>We help</section>
   </div>
 ));

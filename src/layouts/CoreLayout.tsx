@@ -10,21 +10,22 @@ import { flexRoot, flex, content, vertical } from "csstips/lib";
 import { Footer } from "./Footer";
 
 const styles = {
-  testContent: style({
-    $debugName: 'testContent',
-    height: px(200),
-    margin: px(2),
-    padding: px(10)
-  }),
+  /**
+   * A vertical flexbox layout that stretches its content at least as high as the display window.
+   */
   frame: style(vertical, {
     $debugName: 'frame',
     minHeight: viewHeight(100)
   }),
-  header: style(content, {
 
+  /**
+   *
+   */
+  header: style({
+    position: 'absolute',
+    width: percent(100)
   }),
   body: style(flex, {
-
   }),
   footer: style(content, {
     bottom: px(0),
