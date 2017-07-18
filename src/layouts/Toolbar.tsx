@@ -1,4 +1,4 @@
-import {palette, spacing} from "../theme";
+import { palette, spacing } from "../styles";
 import * as React from "react";
 
 import {RootState} from "../store/index";

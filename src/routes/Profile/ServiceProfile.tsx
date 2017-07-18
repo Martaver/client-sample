@@ -1,4 +1,4 @@
-import { palette } from "../../theme";
+import { palette } from "../../styles";
 import * as React from "react";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
