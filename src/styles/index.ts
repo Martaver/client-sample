@@ -31,19 +31,19 @@ export const palette = {
   blueStrong
 };
 
-<<<<<<< HEAD:src/theme/index.ts
+
 export const paddingbig = px(30);
 export const paddingsmall = px(10);
-=======
+
 export const padding = px(6);
 export const width = px(960);
->>>>>>> a95a34bf136ebd236b73fc761fd9f9461c1b37cd:src/styles/index.ts
+
 
 /**
  * The standards spacing configuration used for regular content across the site.
  */
 export const spacing = {
-  paddingbig,paddingsmall
+  paddingbig,paddingsmall,padding,width
 };
 
 /**

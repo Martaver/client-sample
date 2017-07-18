@@ -26,6 +26,7 @@ interface DispatchProps { }
 class FooterComponent extends React.Component<FooterProps & StateProps & DispatchProps, RootState> {
   render() {
     return (
+      <div></div>
 
     );
   }

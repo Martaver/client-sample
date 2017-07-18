@@ -17,47 +17,46 @@ import {RaisedButton} from "material-ui";
 const styles = {
 
 
-  navbar: style({
-    $debugName: 'navbar',
-    padding: px(30)
 
-
-  }),
   logo: style({
     $debugName: 'logo',
     backgroundImage: url(quote(logo)),
     backgroundRepeat: "no-repeat",
 
-    paddingLeft: spacing.paddingsmall,
+    marginLeft: spacing.paddingbig,
 
 
 
     width: px(100),
-    height: px(29),
+
+    padding: spacing.paddingsmall
+
+
 
 
   }),
 
   toolbar: style(flexRoot, {
     $debugName: 'toolbar',
-    height: px(60),
+    height: px(100),
     top: 0,
     left: 0,
     right: 0,
     width: percent(100),
-    padding: spacing.paddingbig
+    padding: spacing.paddingbig,
+    // marginLeft: spacing.paddingbig,
+    // marginRight: spacing.paddingbig
+
+
   }),
   toolbarLeft: style(content, {
     width: px(200)
   }),
   toolbarCenter: style(flex, {}),
+  toolbarVerticalCenter: style(flex, {}),
   toolbarRight: style(content, {
 
-    height: px(200),
-    marginRight: px(60),
-    marginTop: px(30),
-    // borderTop:px(30),
-    // paddingTop:px(40),
+
 
 
 
