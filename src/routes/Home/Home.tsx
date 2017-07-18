@@ -13,7 +13,7 @@ import { Toolbar, FlatButton } from "material-ui";
 
 const styles = {
   welcome: style({
-    color: palette.redDark
+    color: palette.blueDark
   })
 };
 
@@ -34,6 +34,7 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
     <FlatButton>Click me!</FlatButton>
     <h1 className={styles.welcome}>Welcome {p.SomeValue}!</h1>
+    <h1 className={styles.welcome}>Welcome seb!</h1>
 
   </div>
 ));
