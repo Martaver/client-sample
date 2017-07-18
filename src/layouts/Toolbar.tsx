@@ -14,6 +14,7 @@ import {Action} from "redux";
 import {flexRoot, content, flex} from "csstips/lib";
 import {RaisedButton} from "material-ui";
 
+<<<<<<< HEAD
 const styles = {
 
 
@@ -67,6 +68,9 @@ const styles = {
 
   })
 };
+=======
+import styles from "./Toolbar.scss";
+>>>>>>> f2e284f1bcfefa7c1105c9866869eaeb3b81c269
 
 interface OwnProps {
   Something: string;
