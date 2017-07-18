@@ -18,20 +18,22 @@ const styles = {
 
 
 
-  logo: style({
+  logo: style(content,{
     $debugName: 'logo',
     backgroundImage: url(quote(logo)),
     backgroundRepeat: "no-repeat",
 
-    marginLeft: spacing.paddingbig,
+    // marginLeft: spacing.paddingbig,
 
 
 
     width: px(100),
 
-    padding: spacing.paddingsmall
+    padding: spacing.paddingbig,
+    // margin:'auto'
 
-
+    margin:'auto',
+    paddingRight:spacing.paddingbig
 
 
   }),
@@ -43,7 +45,8 @@ const styles = {
     left: 0,
     right: 0,
     width: percent(100),
-    padding: spacing.paddingbig,
+    paddingLeft: spacing.paddingbig,
+   margin:'auto'
     // marginLeft: spacing.paddingbig,
     // marginRight: spacing.paddingbig
 
@@ -55,7 +58,8 @@ const styles = {
   toolbarCenter: style(flex, {}),
   toolbarVerticalCenter: style(flex, {}),
   toolbarRight: style(content, {
-
+    margin:'auto',
+    paddingRight:spacing.paddingbig
 
 
 
