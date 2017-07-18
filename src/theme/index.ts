@@ -27,8 +27,9 @@ export const palette = {
   blueStrong
 };
 
-export const padding = px(6);
+export const paddingbig = px(30);
+export const paddingsmall = px(10);
 
 export const spacing = {
-  padding,
+  paddingbig,paddingsmall
 };

@@ -15,14 +15,21 @@ import {flexRoot, content, flex} from "csstips/lib";
 import {RaisedButton} from "material-ui";
 
 const styles = {
+
+
+  navbar: style({
+    $debugName: 'navbar',
+    padding: px(30)
+
+
+  }),
   logo: style({
     $debugName: 'logo',
     backgroundImage: url(quote(logo)),
     backgroundRepeat: "no-repeat",
 
-    padding: px(10),
-    marginLeft: px(60),
-    marginTop: px(30),
+    paddingLeft: spacing.paddingsmall,
+
 
 
     width: px(100),
@@ -38,7 +45,7 @@ const styles = {
     left: 0,
     right: 0,
     width: percent(100),
-    padding: spacing.padding
+    padding: spacing.paddingbig
   }),
   toolbarLeft: style(content, {
     width: px(200)
