@@ -16,13 +16,7 @@ import { style } from "typestyle/lib";
 import { palette } from "../styles/index";
 import { percent } from "csx/lib";
 
-const styles = {
-  body: style({
-    $debugName: 'body',
-    background: palette.white,
-    minHeight: percent(100)
-  })
-};
+import styles from "./App.scss";
 
 export const App: React.StatelessComponent<{}> = () => (
   <div className={styles.body}>

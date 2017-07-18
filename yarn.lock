@@ -128,23 +128,23 @@ acorn-globals@^3.1.0:
   dependencies:
     acorn "^4.0.4"
 
-acorn-jsx@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
+acorn-jsx@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-4.0.1.tgz#ada5a01573727a237774ce625564d079ec9de12a"
   dependencies:
-    acorn "^3.0.4"
+    acorn "^5.0.3"
 
 acorn@^2.6.4:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-2.7.0.tgz#ab6e7d9d886aaca8b085bc3312b79a198433f0e7"
 
-acorn@^3.0.4:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
-
-acorn@^4.0.3, acorn@^4.0.4:
+acorn@^4.0.4:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
+
+acorn@^5.0.3:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.1.1.tgz#53fe161111f912ab999ee887a90a0bc52822fd75"
 
 ajax-request@^1.2.0:
   version "1.2.1"
@@ -615,6 +615,10 @@ center-align@^0.1.1:
 chain-able@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/chain-able/-/chain-able-1.0.1.tgz#b48ac9bdc18f2192ec730abc66609f90aab5605f"
+
+chain-able@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/chain-able/-/chain-able-3.0.0.tgz#dcffe8b04f3da210941a23843bc1332bb288ca9f"
 
 chain-function@^1.0.0:
   version "1.0.0"
@@ -1216,7 +1220,7 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-fliplog@^0.3.10:
+fliplog@^0.3.13:
   version "0.3.13"
   resolved "https://registry.yarnpkg.com/fliplog/-/fliplog-0.3.13.tgz#dd0d786e821822aae272e0ddc84012596a96154c"
   dependencies:
@@ -1291,13 +1295,13 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
-fuse-box@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/fuse-box/-/fuse-box-2.1.0.tgz#df468f0dea9567b2119829d99c6c5da18485bfa2"
+fuse-box@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/fuse-box/-/fuse-box-2.2.0.tgz#46ab238cc5f091c9a7e61e0ca407cb2085f5eb70"
   dependencies:
-    acorn "^4.0.3"
+    acorn "^5.0.3"
     acorn-es7 "^0.1.0"
-    acorn-jsx "^3.0.1"
+    acorn-jsx "^4.0.1"
     ansi "^0.3.1"
     app-root-path "^2.0.1"
     base64-img "^1.0.3"
@@ -1306,12 +1310,13 @@ fuse-box@^2.1.0:
     concat-with-sourcemaps "^1.0.4"
     escodegen "^1.8.1"
     express "^4.14.0"
-    fliplog "^0.3.10"
+    fliplog "^0.3.13"
     fs-extra "^2.0.0"
     fuse-tools "^1.0.4"
     glob "^7.1.1"
     ieee754 "^1.1.8"
     inquirer "^3.0.6"
+    lego-api "^1.0.7"
     mustache "^2.3.0"
     opencollective "^1.0.3"
     postcss "^6.0.1"
@@ -2195,6 +2200,12 @@ lcid@^1.0.0:
   resolved "https://registry.yarnpkg.com/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
   dependencies:
     invert-kv "^1.0.0"
+
+lego-api@^1.0.7:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/lego-api/-/lego-api-1.0.8.tgz#5e26be726c5e11d540f89e7c6b1abf8c5834bd01"
+  dependencies:
+    chain-able "^3.0.0"
 
 leven@^2.0.0:
   version "2.1.0"
