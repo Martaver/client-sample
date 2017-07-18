@@ -1,25 +1,36 @@
-import { palette, spacing } from "../theme";
+import {palette, spacing} from "../theme";
 import * as React from "react";
 
-import { RootState } from "../store/index";
-import { RouteComponentProps } from "react-router";
-import { Dispatch } from "react-redux";
-import { connect } from "../tools/react-redux-typescript";
+import {RootState} from "../store/index";
+import {RouteComponentProps} from "react-router";
+import {Dispatch} from "react-redux";
+import {connect} from "../tools/react-redux-typescript";
 
 import * as logo from "./logo.svg";
 
-import { style } from "typestyle";
-import { url, quote, px, percent } from "csx";
-import { Action } from "redux";
-import { flexRoot, content, flex } from "csstips/lib";
+import {style} from "typestyle";
+import {url, quote, px, percent} from "csx";
+import {Action} from "redux";
+import {flexRoot, content, flex} from "csstips/lib";
+import {RaisedButton} from "material-ui";
 
 const styles = {
   logo: style({
     $debugName: 'logo',
     backgroundImage: url(quote(logo)),
     backgroundRepeat: "no-repeat",
-    height: px(24)
+
+    padding: px(10),
+    marginLeft: px(60),
+    marginTop: px(30),
+
+
+    width: px(100),
+    height: px(29),
+
+
   }),
+
   toolbar: style(flexRoot, {
     $debugName: 'toolbar',
     height: px(60),
@@ -32,11 +43,18 @@ const styles = {
   toolbarLeft: style(content, {
     width: px(200)
   }),
-  toolbarCenter: style(flex, {
-
-  }),
+  toolbarCenter: style(flex, {}),
   toolbarRight: style(content, {
-    width: px(200)
+
+    height: px(200),
+    marginRight: px(60),
+    marginTop: px(30),
+    // borderTop:px(30),
+    // paddingTop:px(40),
+
+
+
+
   })
 };
 
@@ -56,9 +74,16 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
   render() {
     return (
       <div className={styles.toolbar}>
-        <div className={styles.toolbarLeft} ><div className={styles.logo} alt="Portyr" /></div>
+        <div className={styles.toolbarLeft}>
+          <div className={styles.logo} alt="Portyr"/>
+        </div>
         <div className={styles.toolbarCenter}></div>
-        <div className={styles.toolbarRight}></div>
+        <div className={styles.toolbarRight}>
+          <RaisedButton label="for companies" ></RaisedButton>
+        </div>
+        <div className={styles.toolbarRight}>LOGIN</div>
+        <div className={styles.toolbarRight}>en</div>
+
       </div>
     );
   }
