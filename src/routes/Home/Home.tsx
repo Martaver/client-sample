@@ -9,7 +9,11 @@ import {HomeActions} from "../../store/Home.store";
 import styles from "./Home.scss";
 
 import header from "./header-bg.png";
+<<<<<<< HEAD
 
+=======
+import { FlatButton } from "material-ui";
+>>>>>>> 5bb077240b2c72c764c318c33a30ee8e0e96143a
 
 interface HomeProps {
 
@@ -26,6 +30,7 @@ const mapDispatchToProps = ({
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
+<<<<<<< HEAD
     <section className={styles.hero}>
       <div className={styles.QuestionsAboutData}>Questions about Data Protection?</div>
     </section>
@@ -59,5 +64,17 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
         </div>
       </div>
     </section>
+=======
+     <section className={styles.hero}>
+       <h1>Something</h1>
+       <FlatButton>Testing</FlatButton>
+     </section>
+
+     <section>
+       <div className={styles.aller}>
+         We help you to get the ownership on the data that companies have collected about you.
+       </div>
+     </section>
+>>>>>>> 5bb077240b2c72c764c318c33a30ee8e0e96143a
   </div>
 ));
