@@ -11,14 +11,12 @@ import * as portyr from "../types/portyr-api";
 import { Dispatch } from "redux";
 import { Foo } from "./Foo";
 import { Profile } from "./Profile";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import styles from "./App.scss";
 import { Playground } from "./Playground/Playground";
 
 export const App: React.StatelessComponent<{}> = () => (
   <div className={styles.body}>
-    <MuiThemeProvider>
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <CoreLayout>
@@ -29,6 +27,5 @@ export const App: React.StatelessComponent<{}> = () => (
           </CoreLayout>
         </ConnectedRouter>
       </Provider>
-    </MuiThemeProvider>
   </div>
 );

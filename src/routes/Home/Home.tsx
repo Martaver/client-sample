@@ -1,16 +1,15 @@
 import * as React from "react";
 import { RootState } from "../../store/index";
 import { push } from "react-router-redux";
-import { MapStateToPropsParam, MapDispatchToPropsFunction, MapDispatchToPropsParam, MapDispatchToPropsObject, ComponentDecorator } from "react-redux";
 import { connect } from "../../tools/react-redux-typescript";
 
 import { RouteComponentProps } from "react-router";
 import { HomeActions } from "../../store/Home.store";
 
-import { Toolbar, FlatButton } from "material-ui";
 import styles from "./Home.scss";
 
 import header from "./header-bg.png";
+import { Button } from "react-bootstrap";
 
 interface HomeProps {
 
@@ -28,6 +27,7 @@ const mapDispatchToProps = ({
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
      <section className={styles.overlay}>Testing something</section>
+     <Button></Button>
      <section>
        <div className={styles.aller}>
          We help you to get the ownership on the data that companies have collected about you.

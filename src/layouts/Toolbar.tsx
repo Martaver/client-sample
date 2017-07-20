@@ -8,12 +8,6 @@ import {connect} from "../tools/react-redux-typescript";
 import * as logo from "./logo.svg";
 
 import {Action} from "redux";
-import {RaisedButton} from "material-ui";
-import {FlatButton} from "material-ui";
-
-
-
-
 
 import styles from "./Toolbar.scss";
 
@@ -38,13 +32,6 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
         </div>
         <div className={styles.toolbarCenter}></div>
         <div className={styles.toolbarRight}>
-
-
-
-          {/*<FlatButton label="for company" />*/}
-
-          <RaisedButton label="for companies" ></RaisedButton>
-
 
 
         </div>

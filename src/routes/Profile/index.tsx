@@ -7,7 +7,6 @@ import { connect } from "../../tools/react-redux-typescript";
 import { RouteComponentProps, Switch, Route } from "react-router";
 import { ProfileActions } from "../../store/Profile.store";
 
-import { Toolbar, FlatButton } from "material-ui";
 import { CompanyProfile } from "./CompanyProfile";
 import { ServiceProfile } from "./ServiceProfile";
 
