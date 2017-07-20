@@ -14,6 +14,7 @@ import { Profile } from "./Profile";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import styles from "./App.scss";
+import { Playground } from "./Playground/Playground";
 
 export const App: React.StatelessComponent<{}> = () => (
   <div className={styles.body}>
@@ -22,6 +23,7 @@ export const App: React.StatelessComponent<{}> = () => (
         <ConnectedRouter history={history}>
           <CoreLayout>
             <Route exact={true} path="/" component={Home as any} />
+            <Route path="/playground" component={Playground as any} />
             <Route path="/foo" component={Foo as any} />
             <Route path="/company" component={Profile as any} />
           </CoreLayout>
