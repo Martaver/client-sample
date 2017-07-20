@@ -23,7 +23,7 @@ class PlaygroundComponent extends React.Component<OwnProps & StateProps & Dispat
   render() {
     return (
   //This is your playground. Stick within this div:
-  <div>
+  <div className={styles.myStyle}>
     Hello Kayla... { this.someFunction() }
   </div>
     );
