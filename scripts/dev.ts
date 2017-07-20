@@ -39,11 +39,11 @@ const fuse = new FuseBox({
       SassPlugin({
         importer: true
        }),
-      CSSModules(),
       CSSResourcePlugin({
         dist: `../${BUILD_PATH}/assets`,
-        resolve: (f) => `/assets/${f}`
+        resolve: (f) => `/assets/${f}`,
       }),
+      CSSModules(),
       CSSPlugin(),
       PostCSSPlugin(),
     ],
