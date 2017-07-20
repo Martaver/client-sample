@@ -22,7 +22,10 @@
   left: 0;
   right: 0;
   //width: 100%;
-  padding: $paddingbig;  
+  padding: $paddingbig;
+  //margin:auto;
+
+
 }
 
 .toolbarLeft {
@@ -31,6 +34,8 @@
 }
 
 .toolbarCenter {
+
+  margin:auto;
   flex: 1;
 }
 
@@ -39,11 +44,10 @@
 }
 
 .toolbarRight {
-  padding: $paddingsmall;
+  //padding: $paddingsmall;
+  padding-right: $paddingsmall;
   margin:auto;
 }
-
-
 
 
 
