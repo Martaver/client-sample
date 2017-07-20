@@ -9,6 +9,8 @@
     width: 100px;
 
     padding: $paddingsmall;
+
+
 }
 
 .toolbar {
@@ -19,12 +21,13 @@
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  //width: 100%;
   padding: $paddingbig;  
 }
 
 .toolbarLeft {
   width: 200px;
+  margin:auto;
 }
 
 .toolbarCenter {
@@ -36,7 +39,8 @@
 }
 
 .toolbarRight {
-
+  padding: $paddingsmall;
+  margin:auto;
 }
 
 
