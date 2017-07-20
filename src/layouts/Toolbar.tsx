@@ -43,8 +43,12 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
           <a className={styles.btn}>for company</a>
 
         </div>
-        <div className={styles.toolbarRight}>LOGIN</div>
-        <div className={styles.toolbarRight}>EN</div>
+        <div className={styles.toolbarRight}>
+          <a className={styles.navtext}>LOGIN</a>
+        </div>
+        <div className={styles.toolbarRight}>
+          <a className={styles.navtext}>EN</a>
+        </div>
 
 
 

@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Toolbar.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Toolbar.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="567">
+              <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Toolbar.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Toolbar.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+            <state relative-caret-position="602">
+              <caret line="151" column="1" lean-forward="true" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -127,11 +127,12 @@
       <find>theme_1</find>
       <find>html</find>
       <find>un</find>
-      <find>line</find>
       <find>u</find>
       <find>under</find>
       <find>underli</find>
       <find>underline</find>
+      <find>line</find>
+      <find>point</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -162,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/routes/App.scss" />
         <option value="$PROJECT_DIR$/src/styles/config.scss" />
         <option value="$PROJECT_DIR$/src/routes/Home/Home.tsx" />
-        <option value="$PROJECT_DIR$/src/layouts/Toolbar.tsx" />
         <option value="$PROJECT_DIR$/src/styles/normalize.scss" />
         <option value="$PROJECT_DIR$/src/layouts/Toolbar.scss" />
+        <option value="$PROJECT_DIR$/src/layouts/Toolbar.tsx" />
       </list>
     </option>
   </component>
@@ -855,7 +856,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21255000" />
+    <option name="totallyTimeSpent" value="21825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1871" height="1058" extended-state="6" />
@@ -1314,24 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/normalize.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -1356,11 +1339,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+        <state relative-caret-position="602">
+          <caret line="151" column="1" lean-forward="true" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
