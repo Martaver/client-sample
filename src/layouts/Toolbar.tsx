@@ -12,6 +12,7 @@ import * as logo from "./logo.svg";
 import {Action} from "redux";
 
 import styles from "./Toolbar.scss";
+// import styles from  "../styles/config.scss";
 
 import { Button } from "react-bootstrap";
 
@@ -43,7 +44,7 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
 
         </div>
         <div className={styles.toolbarRight}>LOGIN</div>
-        <div className={styles.toolbarRight}>en</div>
+        <div className={styles.toolbarRight}>EN</div>
 
 
 
