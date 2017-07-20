@@ -839,14 +839,6 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   dependencies:
     cssom "0.3.x"
 
-csstips@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/csstips/-/csstips-0.2.0.tgz#30aca9b13e36f0a9396ef3ae6cff93f84f7ea01d"
-
-csx@^8.2.1:
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/csx/-/csx-8.2.1.tgz#a2eadd886fd51c8eeaaac3dc2a6e8f0e49ecc5e2"
-
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
@@ -1252,10 +1244,6 @@ forwarded@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.0.tgz#19ef9874c4ae1c297bcf078fde63a09b66a84363"
 
-free-style@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/free-style/-/free-style-2.3.1.tgz#ae256f7e78926bf034d2a51f4ba45715b4e6a709"
-
 fresh@0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.0.tgz#f474ca5e6a9246d6fd8e0953cfa9b9c805afa78e"
@@ -1295,9 +1283,9 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     mkdirp ">=0.5 0"
     rimraf "2"
 
-fuse-box@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/fuse-box/-/fuse-box-2.2.0.tgz#46ab238cc5f091c9a7e61e0ca407cb2085f5eb70"
+fuse-box@^2.2.1-beta.14:
+  version "2.2.1-beta.14"
+  resolved "https://registry.yarnpkg.com/fuse-box/-/fuse-box-2.2.1-beta.14.tgz#4dbab23280d81c162fe98cd38e0c677d7e4a8c9a"
   dependencies:
     acorn "^5.0.3"
     acorn-es7 "^0.1.0"
@@ -1590,11 +1578,11 @@ iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
 
-iconv-lite@0.4.15:
+iconv-lite@0.4.15, iconv-lite@~0.4.13:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
-iconv-lite@^0.4.17, iconv-lite@~0.4.13:
+iconv-lite@^0.4.17:
   version "0.4.17"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.17.tgz#4fdaa3b38acbc2c031b045d0edcdfe1ecab18c8d"
 
@@ -3829,12 +3817,6 @@ typescript-fsa@^2.0.0, typescript-fsa@^2.3.0:
 typescript@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.3.tgz#9639f3c3b40148e8ca97fe08a51dd1891bb6be22"
-
-typestyle@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/typestyle/-/typestyle-1.3.2.tgz#c230cce7d3ffaa0f6316f6bf443af97121189219"
-  dependencies:
-    free-style "2.3.1"
 
 ua-parser-js@^0.7.9:
   version "0.7.12"

@@ -12,9 +12,6 @@ import { Dispatch } from "redux";
 import { Foo } from "./Foo";
 import { Profile } from "./Profile";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { style } from "typestyle/lib";
-import { palette } from "../styles/index";
-import { percent } from "csx/lib";
 
 import styles from "./App.scss";
 

@@ -1,0 +1,35 @@
+
+
+.itemContainer {
+  display: flex;
+  flex-flow: row no-wrap;
+}
+
+.item {
+
+}
+
+.gutter { 
+  flex: 1 
+}
+
+.bottomLine {
+  text-align: center;
+  position: relative;
+}
+
+.social {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.circle {
+  border-radius: 16px;
+  background-color: #d8d8d8;
+  height: 31px;
+  width: 31px;
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 6px;
+}

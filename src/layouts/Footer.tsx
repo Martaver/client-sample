@@ -1,4 +1,3 @@
-import { palette, spacing } from "../styles";
 import * as React from "react";
 
 import { RootState } from "../store/index";
@@ -8,38 +7,9 @@ import { connect } from "../tools/react-redux-typescript";
 
 import * as logo from "./logo.svg";
 
-import { style } from "typestyle";
-import { url, quote, px, percent } from "csx";
 import { Action } from "redux";
-import { content, flex, horizontal } from "csstips/lib";
 
-const styles = {
-  itemContainer: style(horizontal, {
-
-  }),
-  item: style(content, {
-
-  }),
-  gutter: style(flex, {}),
-  bottomLine: style({
-    textAlign: 'center',
-    position: 'relative'
-  }),
-  social: style({
-    position: 'absolute',
-    right: px(0),
-    top: px(0)
-  }),
-  circle: style({
-    borderRadius: px(16),
-    backgroundColor: '#d8d8d8',
-    height: px(31),
-    width: px(31),
-    display: 'inline-block',
-    marginLeft: px(6),
-    marginRight: px(6)
-  })
-};
+import styles from "./Footer.scss";
 
 interface FooterProps { }
 
@@ -52,7 +22,7 @@ class FooterComponent extends React.Component<FooterProps & StateProps & Dispatc
     return (
       <div>
         <hr />
-        <div className={styles.itemContainer}>
+         <div className={styles.itemContainer}>
           <div className={styles.gutter} />
           <div className={styles.item}>WE ARE HERE TO HELP YOU</div>
           <div className={styles.item}>About Portyr</div>

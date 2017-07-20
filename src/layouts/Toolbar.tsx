@@ -1,4 +1,3 @@
-import { palette, spacing } from "../styles";
 import * as React from "react";
 
 import {RootState} from "../store/index";
@@ -8,10 +7,7 @@ import {connect} from "../tools/react-redux-typescript";
 
 import * as logo from "./logo.svg";
 
-import {style} from "typestyle";
-import {url, quote, px, percent} from "csx";
 import {Action} from "redux";
-import {flexRoot, content, flex} from "csstips/lib";
 import {RaisedButton} from "material-ui";
 
 import styles from "./Toolbar.scss";

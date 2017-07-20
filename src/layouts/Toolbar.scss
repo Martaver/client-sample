@@ -1,5 +1,4 @@
-$paddingbig: 30px;
-$paddingsmall: 10px;
+@import "../styles/config.scss";
 
 .logo {
     background-image: url("./logo.svg"); 
@@ -12,26 +11,33 @@ $paddingsmall: 10px;
     padding: $paddingsmall;
 }
 
-  // toolbar: style(flexRoot, {
-  //   $debugName: 'toolbar',
-  //   height: px(100),
-  //   top: 0,
-  //   left: 0,
-  //   right: 0,
-  //   width: percent(100),
-  //   padding: spacing.paddingbig,
-  //   // marginLeft: spacing.paddingbig,
-  //   // marginRight: spacing.paddingbig
+.toolbar {
+  display: flex;
+  flex-flow: row nowrap;  
 
+  height: 100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: $paddingbig;  
+}
 
-  // }),
-  // toolbarLeft: style(content, {
-  //   width: px(200)
-  // }),
-  // toolbarCenter: style(flex, {}),
-  // toolbarVerticalCenter: style(flex, {}),
-  // toolbarRight: style(content, {
+.toolbarLeft {
+  width: 200px;
+}
 
+.toolbarCenter {
+  flex: 1;
+}
+
+.toolbarVerticalCenter {
+  flex: 1;
+}
+
+.toolbarRight {
+
+}
 
 
 

@@ -1,0 +1,32 @@
+// import { rgba } from "csx";
+// import { px } from "csx/lib";
+// import { style } from "typestyle/lib";
+
+$black: "#212121";
+$white: "#fff";
+
+$red: "#BF360C";
+$redDark: "#870000";
+$redLight: "#FF7043";
+$redStrong: "#FF3D00";
+
+$blue: "#2C99B4";
+$blueDark: "#006b84";
+$blueLight: "#33B3D3";
+$blueStrong: "#39C6EA";
+
+
+$paddingbig: 30px;
+$paddingsmall: 10px;
+
+$padding: 6px;
+$width: 960px;
+
+// /**
+//  * The standard container used for regular content, centered with a gutter within a section.
+//  */
+.container {
+  width: 960px;
+  margin: 'auto';
+  padding: $padding
+}
