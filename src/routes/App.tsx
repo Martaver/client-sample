@@ -13,7 +13,7 @@ import { Foo } from "./Foo";
 import { Profile } from "./Profile";
 
 import styles from "./App.scss";
-import "../styles/fonts/fonts.scss";
+import "../styles/fonts/out/stylesheet.css";
 
 import { Playground } from "./Playground/Playground";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
