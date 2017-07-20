@@ -1,4 +1,4 @@
-import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin, QuantumPlugin, WebIndexPlugin } from "fuse-box";
+import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin, QuantumPlugin, WebIndexPlugin, PostCSSPlugin } from "fuse-box";
 import { cp, mkdir, rm } from "shelljs";
 import { Environment } from "./Environment";
 import * as express from "express";
@@ -35,6 +35,18 @@ const fuse = new FuseBox({
     ImageBase64Plugin({
       useDefault: true
     }),
+    [
+      SassPlugin({
+        importer: true
+       }),
+      CSSModules(),
+      CSSResourcePlugin({
+        dist: `../${BUILD_PATH}/assets`,
+        resolve: (f) => `/assets/${f}`
+      }),
+      CSSPlugin(),
+      PostCSSPlugin(),
+    ],
     WebIndexPlugin({
       title: "Portyr",
       template: `../${BUILD_PATH}index.html`
@@ -46,9 +58,9 @@ const fuse = new FuseBox({
 });
 
 fuse.bundle("app")
-  .instructions("!> [index.dev.tsx]");
+  .instructions("!> [index.tsx]");
 
 fuse.bundle("vendor")
-  .instructions("~ index.dev.tsx");
+  .instructions("~ index.tsx");
 
 fuse.run();
