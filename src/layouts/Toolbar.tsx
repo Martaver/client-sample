@@ -10,8 +10,6 @@ import { Logo } from "./Logo";
 
 import styles from "./Toolbar.scss";
 
-import { Button } from "react-bootstrap";
-
 interface OwnProps { }
 
 interface StateProps { }

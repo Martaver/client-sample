@@ -9,7 +9,7 @@ import { HomeActions } from "../../store/Home.store";
 import styles from "./Home.scss";
 
 import header from "./header-bg.png";
-import { Button } from "react-bootstrap";
+import { FlatButton } from "material-ui";
 
 interface HomeProps {
 
@@ -26,8 +26,11 @@ const mapDispatchToProps = ({
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-     <section className={styles.hero}>Testing something</section>
-     <Button>dfdfd</Button>
+     <section className={styles.hero}>
+       <h1>Something</h1>
+       <FlatButton>Testing</FlatButton>
+     </section>
+
      <section>
        <div className={styles.aller}>
          We help you to get the ownership on the data that companies have collected about you.
