@@ -1,14 +1,22 @@
 @import "../styles/config.scss";
 
 .logo {
-  background-image: url("./logo.svg");
-  background-repeat: no-repeat;
-  color: white;
-  fill: white;
-  width: 100px;
 
-  padding: $paddingsmall;
+    margin-left: $paddingbig;
 
+    width: 100px;
+
+    padding: $paddingsmall;
+
+    svg {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+            
+      * {
+        fill: white !important;    
+      }
+    }
 }
 
 .toolbar {

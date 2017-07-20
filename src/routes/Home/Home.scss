@@ -1,9 +1,15 @@
-.overlay {
+.hero {
   height: 600px;
-  background-image: url("./header-bg.png");
+  background-image: url("./hero-bg.png");
   background-position-x: center;
   background-size: cover;
   background-repeat: no-repeat;  
+
+  display: flex;
+  flex-flow: column nowrap;
+  
+  align-items: center;
+  justify-content: center;
 }
 
 .aller {

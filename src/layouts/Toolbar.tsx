@@ -8,6 +8,7 @@ import {connect} from "../tools/react-redux-typescript";
 
 
 import * as logo from "./logo.svg";
+import { Logo } from "./Logo";
 
 import {Action} from "redux";
 
@@ -33,7 +34,7 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
     return (
       <div className={styles.toolbar}>
         <div className={styles.toolbarLeft}>
-          <div className={styles.logo} alt="Portyr"/>
+          <div className={styles.logo}><Logo /></div>
         </div>
         <div className={styles.toolbarCenter}>
 
