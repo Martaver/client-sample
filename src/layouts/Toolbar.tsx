@@ -5,11 +5,15 @@ import {RouteComponentProps} from "react-router";
 import {Dispatch} from "react-redux";
 import {connect} from "../tools/react-redux-typescript";
 
+
+
 import * as logo from "./logo.svg";
 
 import {Action} from "redux";
 
 import styles from "./Toolbar.scss";
+
+import { Button } from "react-bootstrap";
 
 interface OwnProps {
   Something: string;
@@ -30,9 +34,12 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
         <div className={styles.toolbarLeft}>
           <div className={styles.logo} alt="Portyr"/>
         </div>
-        <div className={styles.toolbarCenter}></div>
-        <div className={styles.toolbarRight}>
+        <div className={styles.toolbarCenter}>
 
+
+        </div>
+        <div className={styles.toolbarRight}>
+          <a className={styles.btn}>for company</a>
 
         </div>
         <div className={styles.toolbarRight}>LOGIN</div>

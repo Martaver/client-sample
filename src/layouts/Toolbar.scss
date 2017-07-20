@@ -1,41 +1,39 @@
 @import "../styles/config.scss";
 
 .logo {
-    background-image: url("./logo.svg"); 
-    background-repeat: no-repeat;
+  background-image: url("./logo.svg");
+  background-repeat: no-repeat;
 
-    margin-left: $paddingbig;
+  width: 100px;
 
-    width: 100px;
-
-    padding: $paddingsmall;
-
+  padding: $paddingsmall;
 
 }
 
 .toolbar {
   display: flex;
-  flex-flow: row nowrap;  
+  flex-flow: row nowrap;
 
   height: 100px;
   top: 0;
   left: 0;
   right: 0;
-  //width: 100%;
+
   padding: $paddingbig;
   //margin:auto;
-
+  background-color: black;
 
 }
 
 .toolbarLeft {
   width: 200px;
-  margin:auto;
+  margin: auto;
+  padding-left: $paddingbig;
 }
 
 .toolbarCenter {
 
-  margin:auto;
+  margin: auto;
   flex: 1;
 }
 
@@ -45,10 +43,76 @@
 
 .toolbarRight {
   //padding: $paddingsmall;
-  padding-right: $paddingsmall;
-  margin:auto;
+  padding-right: $paddingbig;
+  margin: auto;
+  color: white;
 }
 
+.btn {;
+  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
 
+  background-size: auto;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(255, 255, 255);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(255, 255, 255);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(255, 255, 255);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: block;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  height: 33.5938px;
+  letter-spacing: normal;
+  line-height: 18px;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  margin-bottom: 0px;
+  padding-bottom: 6.8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 6.8px;
+  text-align: center;
+  text-decoration-color: rgb(255, 255, 255);
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 146px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  // })
+}
+
+// })

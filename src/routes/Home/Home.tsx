@@ -27,7 +27,7 @@ const mapDispatchToProps = ({
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
      <section className={styles.overlay}>Testing something</section>
-     <Button></Button>
+     <Button>dfdfd</Button>
      <section>
        <div className={styles.aller}>
          We help you to get the ownership on the data that companies have collected about you.
