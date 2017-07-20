@@ -5,29 +5,18 @@ import {RouteComponentProps} from "react-router";
 import {Dispatch} from "react-redux";
 import {connect} from "../tools/react-redux-typescript";
 
-
-
 import * as logo from "./logo.svg";
 import { Logo } from "./Logo";
 
-import {Action} from "redux";
-
 import styles from "./Toolbar.scss";
-// import styles from  "../styles/config.scss";
 
 import { Button } from "react-bootstrap";
 
-interface OwnProps {
-  Something: string;
-}
+interface OwnProps { }
 
-interface StateProps {
-  myProperty: string;
-}
+interface StateProps { }
 
-interface DispatchProps {
-  doSomething: () => Action;
-}
+interface DispatchProps { }
 
 class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchProps, RootState> {
   render() {
@@ -50,8 +39,6 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
         <div className={styles.toolbarRight}>
           <a className={styles.navtext}>EN</a>
         </div>
-
-
 
       </div>
     );

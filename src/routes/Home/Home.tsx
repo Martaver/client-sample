@@ -26,9 +26,7 @@ const mapDispatchToProps = ({
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-     <section className={styles.overlay}>Testing something
-       <div className={styles.QuestionsAboutData}>Questions about Data Protection? </div>
-     </section>
+     <section className={styles.hero}>Testing something</section>
      <Button>dfdfd</Button>
      <section>
        <div className={styles.aller}>

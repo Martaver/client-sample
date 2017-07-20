@@ -9,7 +9,7 @@ import styles from "./CoreLayout.scss";
 export const CoreLayout: React.StatelessComponent<{}> = ({children}) => (
   <div className={styles.frame}>
     <div className={styles.header}>
-      <Toolbar Something={"Welcome to Portyr"} />
+       <Toolbar />
     </div>
     <div className={styles.body}>
       {children}
