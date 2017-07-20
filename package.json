@@ -26,6 +26,8 @@
     "deploy": "git checkout gh-pages && cd dist && git add --all && git commit -m \"New Release\" && git push"
   },
   "dependencies": {
+    "@types/d3": "^4.9.0",
+    "d3": "^4.10.0",
     "history": "^4.6.1",
     "lodash": "^4.17.4",
     "material-ui": "^0.18.3",
