@@ -40,7 +40,7 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
 
         </div>
         <div className={styles.toolbarRight}>
-          <a className={styles.btn}>for company</a>
+          <a className={styles.btn}>FOR COMPANY</a>
 
         </div>
         <div className={styles.toolbarRight}>

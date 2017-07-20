@@ -15,10 +15,11 @@
       <file leaf-file-name="Home.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/Home/Home.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="41" />
+            <state relative-caret-position="608">
+              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
               <folding>
-                <marker date="1500556478000" expanded="true" signature="965:984" ph="&lt;div/&gt;" />
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1500560571000" expanded="true" signature="1061:1080" ph="&lt;div/&gt;" />
               </folding>
             </state>
           </provider>
@@ -34,14 +35,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Toolbar.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Toolbar.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+            <state relative-caret-position="678">
+              <caret line="55" column="6" lean-forward="true" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/Home/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,18 +97,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Playground.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/Playground/Playground.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="header-bg.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/Home/header-bg.png">
           <provider selected="true" editor-type-id="images">
@@ -105,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Home.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/Home/Home.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="418">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,10 +161,11 @@
         <option value="$PROJECT_DIR$/src/routes/Profile/index.tsx" />
         <option value="$PROJECT_DIR$/src/routes/App.scss" />
         <option value="$PROJECT_DIR$/src/styles/config.scss" />
-        <option value="$PROJECT_DIR$/src/routes/Home/Home.tsx" />
         <option value="$PROJECT_DIR$/src/styles/normalize.scss" />
         <option value="$PROJECT_DIR$/src/layouts/Toolbar.scss" />
         <option value="$PROJECT_DIR$/src/layouts/Toolbar.tsx" />
+        <option value="$PROJECT_DIR$/src/routes/Home/Home.tsx" />
+        <option value="$PROJECT_DIR$/src/routes/Home/Home.scss" />
       </list>
     </option>
   </component>
@@ -856,7 +856,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21825000" />
+    <option name="totallyTimeSpent" value="22292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1871" height="1058" extended-state="6" />
@@ -939,7 +939,8 @@
         <state relative-caret-position="1121">
           <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
-            <marker date="1500556478000" expanded="true" signature="965:984" ph="&lt;div/&gt;" />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1500560571000" expanded="true" signature="1061:1080" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>
@@ -1007,7 +1008,8 @@
         <state relative-caret-position="437">
           <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding>
-            <marker date="1500556478000" expanded="true" signature="965:984" ph="&lt;div/&gt;" />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1500560571000" expanded="true" signature="1061:1080" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>
@@ -1075,7 +1077,8 @@
         <state relative-caret-position="950">
           <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <marker date="1500556478000" expanded="true" signature="965:984" ph="&lt;div/&gt;" />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1500560571000" expanded="true" signature="1061:1080" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>
@@ -1248,14 +1251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Home/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Profile/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
@@ -1292,29 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Home/header-bg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Home/Home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Home/Home.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <marker date="1500556478000" expanded="true" signature="965:984" ph="&lt;div/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/normalize.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -1339,14 +1311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -1355,13 +1319,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/Home/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/Home/header-bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/Toolbar.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+        <state relative-caret-position="678">
+          <caret line="55" column="6" lean-forward="true" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/Home/Home.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1500560571000" expanded="true" signature="1061:1080" ph="&lt;div/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/Home/Home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
