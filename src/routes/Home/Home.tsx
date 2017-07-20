@@ -10,6 +10,7 @@ import { HomeActions } from "../../store/Home.store";
 import { Toolbar, FlatButton } from "material-ui";
 import styles from "./Home.scss";
 
+import header from "./header-bg.png";
 
 interface HomeProps {
 
@@ -26,7 +27,11 @@ const mapDispatchToProps = ({
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-     <section className={styles.overlay}>Testing</section>
-    <section>We help</section>
+     <section className={styles.overlay}>Testing something</section>
+     <section>
+       <div className={styles.aller}>
+         We help you to get the ownership on the data that companies have collected about you.
+       </div>
+     </section>
   </div>
 ));
