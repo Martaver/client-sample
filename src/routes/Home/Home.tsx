@@ -30,7 +30,13 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
 
     <section className={styles.hero}>
-      <div className={styles.QuestionsAboutData}>Questions about Data Protection?</div>
+      <div className={styles.QuestionsAboutData}>
+        Questions about Data Protection?
+      </div>
+      <div className={styles.mainSearch}>
+        <div className={styles.icon} />
+        <input placeholder="Search companies or ask about GDPR"></input>
+      </div>
     </section>
 
     <section>
