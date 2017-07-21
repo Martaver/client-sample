@@ -14,21 +14,24 @@
   align-items: center;
   justify-content: center;
 
-  .icon {
-    background-image: url("./search-icon.svg");
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    
-    width: 20px;
-    height: 100%;
-    margin-left: 36px;
-    position: absolute;
-  }
+  
 
   .mainSearch {
+
     position: relative;
+
+    .icon {
+      background-image: url("./search-icon.svg");
+      background-position-x: center;
+      background-position-y: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      
+      width: 20px;
+      height: 100%;
+      margin-left: 36px;
+      position: absolute;
+    }
 
     input {
       width: 600px;

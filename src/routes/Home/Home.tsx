@@ -44,7 +44,7 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
 
         <div className={styles.sessionbase1}>
           <div className={styles.herotextright}>
-            We help you to get the ownership on the data that companies have collected about you.
+            <span style={{fontWeight: "bold"}}>We help you</span> to get the ownership on the data that companies have collected about you.
           </div>
           <br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <div className={styles.flowpic}>

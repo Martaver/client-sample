@@ -61,7 +61,7 @@
   background-image: none;
   background-origin: padding-box;
   background-position-x: 0%;
-  background-position-y: 0%;
+  background-position-y: 0%;  
 
   background-size: auto;
   border-bottom-color: rgb(255, 255, 255);
@@ -119,6 +119,12 @@
   white-space: nowrap;
   width: 146px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  font-family: Aller;
+  font-weight: 200;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
 }
 
 .btn:hover {
@@ -127,8 +133,7 @@
   border-color: #d4d4d4;
   box-shadow: none;
   -webkit-text-fill-color: black;
-  text-decoration: none;
-
+  text-decoration: none;  
 }
 
 .btn:focus {
