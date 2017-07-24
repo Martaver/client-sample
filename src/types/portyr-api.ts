@@ -1,9 +1,9 @@
 /* tslint:disable */
 // This is a generated file - do not edit.
-// Last generated: Thu Jul 20 2017 14:36:17 GMT+0300 (FLE Summer Time).
+// Last generated: Mon Jul 24 2017 12:07:21 GMT+0300 (FLE Summer Time).
 
 /* Options:
-Date: 2017-07-20 14:36:17
+Date: 2017-07-24 12:07:21
 Version: 1.043
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: http://localhost:5000
@@ -80,7 +80,7 @@ export class Company
 {
     id: number;
     name: string;
-    services: Policy[];
+    policies: Policy[];
 }
 
 // @DataContract
