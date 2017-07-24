@@ -18,7 +18,7 @@ interface HomeProps {
 }
 
 const mapStateToProps = (state: RootState, own: HomeProps) => ({
-  SomeValue: state.home.SomeValue,
+  SomeValue: state.home.searchText,
 });
 
 const mapDispatchToProps = ({
@@ -35,7 +35,19 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
       </div>
       <div className={styles.mainSearch}>
         <div className={styles.icon} />
-        <input placeholder="Search companies or ask about GDPR"></input>
+        <input placeholder="Search companies or ask about GDPR" onChange={e => p.searchTextChanged({searchText: e.currentTarget.value})} ></input>
+        <div className={styles.mainSearchResults}>
+          <div className={styles.title}>Latest Searches</div>
+          <ul>
+            <li>Some company</li>
+            <li>Some company</li>
+          </ul>
+          <hr/>
+          <ul>
+            <li>Some question</li>
+            <li>Some question</li>
+          </ul>
+        </div>
       </div>
     </section>
 

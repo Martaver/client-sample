@@ -38,7 +38,7 @@
     "redux": "^3.6.0",
     "redux-observable": "^0.14.1",
     "reselect": "^3.0.0",
-    "rxjs": "^5.3.0",
+    "rxjs": "^5.4.2",
     "servicestack-client": "^0.0.34",
     "tslib": "^1.6.0",
     "typescript-collections": "^1.2.3",

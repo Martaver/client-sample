@@ -16,47 +16,79 @@
 
   
 
-  .mainSearch {
+.mainSearch {
 
-    position: relative;
+      margin: $paddingsmall;  
+      position: relative;
 
-    .icon {
-      background-image: url("./search-icon.svg");
-      background-position-x: center;
-      background-position-y: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      .icon {
+        background-image: url("./search-icon.svg");
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        width: 20px;
+        height: 100%;
+        margin-left: 36px;
+        position: absolute;
+      }
+
+      input {
+        width: 600px;
+        height: 70px;
+        padding-left: 75px;    
+        border-radius: 10px;
+        border: none;      
+        box-shadow: inset 0 0 4px 0 rgba(39, 56, 54, 0.4);
+
+        font-family: Aller;
+        font-size: 24px;
+        text-align: left;
+        color: #c7c7c7;   
+        
+        
+      }      
+
+      ::-webkit-input-placeholder {
+        color: #c7c7c7;
+      }
+    
+    }         
+
+    .mainSearchResults {
+      margin-top: 3px;
       
-      width: 20px;
-      height: 100%;
-      margin-left: 36px;
-      position: absolute;
-    }
+      padding: $paddingsmall;
 
-    input {
-      width: 600px;
-      height: 70px;
-      padding-left: 75px;    
       border-radius: 10px;
-      border: none;
-      margin: $paddingsmall;
-      box-shadow: inset 0 0 4px 0 rgba(39, 56, 54, 0.4);
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px 0 rgba(15, 38, 71, 0.5);
+      border: solid 1px #dde3eb;      
 
-      font-family: Aller;
-      font-size: 24px;
-      text-align: left;
-      color: #c7c7c7;   
-      
-      
-    }     
+      width: 100%;
 
-    ::-webkit-input-placeholder {
-      color: #c7c7c7;
+      .title {
+        font-family: Aller;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: left;
+        color: #2196ee;
+      }
+      
+      opacity: 0;
+      position: absolute;
+
+      transition: opacity .25s ease-in-out;
     }
-  }  
-
-  
-}
+    
+    input:focus + .mainSearchResults {           
+      opacity: 1;
+    }
+    
+    
+}  
 
 .aller {
   font-family: 'Aller'

@@ -44,7 +44,7 @@ class ToolbarComponent extends React.Component<OwnProps & StateProps & DispatchP
 }
 
 const mapStateToProps = (s: RootState, p: OwnProps) => ({
-  myProperty: s.home.SomeValue
+  myProperty: s.home.searchText
 });
 
 const mapDispatchToProps = (d: Dispatch<RootState>) => ({

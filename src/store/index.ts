@@ -4,7 +4,7 @@ import createBrowserHistory from "history/createBrowserHistory";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import { serviceStackMiddleware } from "../tools/servicestack";
 import { FooReducer, FooState } from "./Foo.store";
-import { HomeReducer, HomeState } from "./Home.store";
+import { HomeReducer, HomeState, HomeEpic } from "./Home.store";
 import { constants } from "../constants";
 import { ProfileReducer, ProfileState } from "./Profile.store";
 
@@ -30,7 +30,7 @@ const rootReducer = combineReducers<RootState>({
 const recoverState = (): RootState => ({} as RootState);
 
 const rootEpic = combineEpics(
-
+  HomeEpic
 );
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
