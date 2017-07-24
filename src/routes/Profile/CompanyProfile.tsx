@@ -10,7 +10,10 @@ import { ProfileActions, Service, Purpose, Company, DataType } from "../../store
 
 import * as _ from "lodash";
 
+import styles from "./index.scss";
+
 import { createSelector } from "reselect";
+import { Content } from "../../components/Content";
 
 interface IModelCompany extends Company {
   dataTypes: IModelDataType[];
@@ -77,16 +80,6 @@ const modelSelector = createSelector(
   }
 );
 
-// const styles = {
-//   welcome: style({
-//     color: palette.redDark
-//   }),
-//   link: style({
-//     textDecoration: 'underline',
-//     cursor: 'pointer'
-//   })
-// };
-
 interface ProfileByTypeProps {
 
 }
@@ -111,7 +104,7 @@ export const CompanyProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
 
   const renderService = (service: IModelService) => (
     <li key={service.id}>
-      {/* <span className={styles.link} onClick={ () => p.goService(service.id) }>{service.name}</span> for: */}
+        <span className={styles.link} onClick={ () => p.goService(service.id) }>{service.name}</span> for:
       <ul>{ service.purposes.map(renderPurpose) }</ul>
     </li>
   );
@@ -123,8 +116,8 @@ export const CompanyProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
   );
 
   return (
-    <div>
+    <Content>
       { p.company.dataTypes.map(renderDataType) }
-    </div>
+    </Content>
   );
 });

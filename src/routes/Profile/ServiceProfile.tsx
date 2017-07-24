@@ -7,6 +7,7 @@ import { RouteComponentProps } from "react-router";
 import { ProfileActions, Service, Purpose, Company, DataType } from "../../store/Profile.store";
 
 import { createSelector } from "reselect";
+import { Content } from "../../components/Content";
 
 interface IModelCompany extends Company {
   services: IModelService[];
@@ -42,12 +43,6 @@ const modelSelector = createSelector(
   }
 );
 
-// const styles = {
-//   welcome: style({
-//     color: palette.redDark
-//   })
-// };
-
 interface ProfileProps extends RouteComponentProps<{serviceId: number}> {
 
 }
@@ -80,7 +75,7 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
   );
 
   return (
-    <div>
+    <Content>
       { p.service && (
         <div>
           <h2>{p.service.name}</h2>
@@ -88,6 +83,6 @@ export const ServiceProfile = connect(mapStateToProps, mapDispatchToProps)(p => 
           { p.service.purposes.map(renderPurpose) }
         </div>
       )}
-    </div>
+    </Content>
   );
 });

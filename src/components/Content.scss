@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  .content {
+    width: 960px;  
+  }
+}

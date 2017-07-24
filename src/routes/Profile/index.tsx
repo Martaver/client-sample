@@ -10,15 +10,7 @@ import { ProfileActions } from "../../store/Profile.store";
 import { CompanyProfile } from "./CompanyProfile";
 import { ServiceProfile } from "./ServiceProfile";
 
-// const styles = {
-//   welcome: style({
-//     color: palette.redDark
-//   }),
-//   link: style({
-//     textDecoration: 'underline',
-//     cursor: 'pointer'
-//   })
-// };
+import styles from "./index.scss";
 
 interface ProfileProps {
 
@@ -35,7 +27,7 @@ const mapDispatchToProps = ({
 
 export const Profile = connect(mapStateToProps, mapDispatchToProps)(p => (
   <div>
-    {/* <h1 onClick={ p.goCompany } className={styles.link}>{p.company.name}</h1> */}
+    <h1 onClick={ p.goCompany } className={styles.link}>{p.company.name}</h1>
     <Switch>
       {/* Update this to be relative, not absolute.*/}
       <Route path="/company" exact={true} component={CompanyProfile as any} />
