@@ -12,4 +12,4 @@ To install a new font:
 
 App.tsx references the CSS file at /fonts/out/stylesheet.css already, so your new fonts should be ready to use.
 
-This process handles all font conversions, graceful degradation and CSS declarations fast.
+This process handles all font conversions, graceful degradation and CS`S declarations fast.

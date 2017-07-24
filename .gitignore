@@ -28,3 +28,5 @@ jspm_packages/
 dev/
 dist/
 lib/
+
+.idea
