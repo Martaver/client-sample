@@ -59,7 +59,8 @@
     .mainSearchResults {
       margin-top: 3px;
       
-      padding: $paddingsmall;
+      padding: $paddingsmall;  
+      padding-left: $paddingbig;    
 
       border-radius: 10px;
       background-color: #ffffff;
@@ -67,6 +68,11 @@
       border: solid 1px #dde3eb;      
 
       width: 100%;
+
+      opacity: 0;
+      position: absolute;
+
+      transition: opacity .25s ease-in-out;
 
       .title {
         font-family: Aller;
@@ -76,11 +82,39 @@
         text-align: left;
         color: #2196ee;
       }
-      
-      opacity: 0;
-      position: absolute;
 
-      transition: opacity .25s ease-in-out;
+      .resultsRow {
+        font-family: Aller;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: left;
+        color: #143d78;
+
+        position: relative; 
+        display: flex;
+        flex-flow: row nowrap;               
+        align-items: center;
+
+        padding-top: $padding;
+
+        .companyIcon {
+          background-image: url("./icon-building.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position-x: center;
+          background-position-y: center;
+
+          width: 28px;          
+          height: 19px;          
+
+          position: absolute;          
+        }
+
+        .resultsLabel {          
+          padding-left: 46px;   
+          flex: 1;
+        }
+      }
     }
     
     input:focus + .mainSearchResults {           

@@ -40,21 +40,23 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
         <div className={styles.icon} />
         <input placeholder="Search companies or ask about GDPR" onChange={e => p.searchTextChanged({searchText: e.currentTarget.value})} ></input>
         <div className={styles.mainSearchResults}>
-          <div className={styles.title}>Latest Searches</div>
           {
             p.searchResults.length > 0
             ? (
               <div>
+                <div className={styles.title}>Suggestions</div>
                 {p.searchResults.map(r => (
-                  <div key={r.id} onClick={() => p.goCompany(r.id)}>
-                    <span>{r.name}</span>
+                  <div key={r.id} onClick={() => p.goCompany(r.id)} className={styles.resultsRow} >
+                    <div className={styles.companyIcon} ></div>
+                    <div className={styles.resultsLabel}>{r.name}</div>
                   </div>
                 ))}
               </div>
             )
             : p.searchText.length === 0 ? (
               <div>
-                Start typing to find out what data companies collect.
+                <div className={styles.title}>Latest Searches</div>
+                <div>Start typing to find out what data companies collect.</div>
               </div>
             )
             : p.isSearching ? (
