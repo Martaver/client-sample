@@ -11,7 +11,6 @@ import { ProfileReducer, ProfileState } from "./Profile.store";
 declare const window: Window & { devToolsExtension: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };
 
 export const history = createBrowserHistory();
-const routerMw = routerMiddleware(history);
 
 export type RootState = {
   home: HomeState,
@@ -33,13 +32,15 @@ const rootEpic = combineEpics(
   HomeEpic
 );
 
-const epicMiddleware = createEpicMiddleware(rootEpic);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const servicestack = serviceStackMiddleware(constants.API_BASEURL);
 
 // store singleton instance
 export const store = createStore(
   rootReducer,
   recoverState(),
-  composeEnhancers(applyMiddleware(servicestack, routerMw, epicMiddleware)),
+  composeEnhancers(applyMiddleware(
+    serviceStackMiddleware(constants.API_BASEURL),
+    routerMiddleware(history),
+    createEpicMiddleware(rootEpic)
+  )),
 );
