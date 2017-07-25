@@ -5,6 +5,6 @@ export const config = {
     api_base_url: `http://localhost:5000`,
   },
   dist: {
-    api_base_url: `http://api.portyr.com`
+    api_base_url: `http://localhost:5000`
   }
 };

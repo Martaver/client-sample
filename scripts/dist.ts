@@ -1,4 +1,4 @@
-import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin, QuantumPlugin, WebIndexPlugin, PostCSSPlugin } from "fuse-box";
+import { CSSModules, CSSPlugin, FuseBox, ImageBase64Plugin, SassPlugin, EnvPlugin, CSSResourcePlugin, CopyPlugin, QuantumPlugin, WebIndexPlugin, PostCSSPlugin, BabelPlugin } from "fuse-box";
 import { cp, mkdir, rm } from "shelljs";
 import { Environment } from "./Environment";
 import * as express from "express";
@@ -23,7 +23,18 @@ const fuse = new FuseBox({
   tsConfig: `../${SRC_PATH}tsconfig.json`,
   output: `../${BUILD_PATH}$name.js`,
   sourceMaps: false,
+  useJsNext: true,
+  cache: false,
   plugins: [
+    //React router is gay and uses non-standard JS, so use BabelPlugin on it.
+    [/node_modules\/react-router\/.*?\.js$/, BabelPlugin({
+      config: {
+        presets: ["es2015"],
+        plugins: [
+            ["add-module-exports"],
+        ],
+      },
+    })],
     CopyPlugin({
       files: [`../${SRC_PATH}/styles/*.css`],
       dest: "assets"
@@ -61,6 +72,7 @@ const fuse = new FuseBox({
     // QuantumPlugin({
     //   uglify: false,
     //   removeExportsInterop: false,
+    //   ensureES5: true,
     // }),
     WebIndexPlugin({
       title: "Portyr",
