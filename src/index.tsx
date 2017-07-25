@@ -9,4 +9,5 @@ import * as injectTapEventPlugin from "react-tap-event-plugin";
 // E.g. if fuse-box hot reloader triggers, this will attempt to reload and cause 'injectTapEventPlugin(): Can only be called once per application lifecycle.'
 try { injectTapEventPlugin(); } catch(e) { }
 
+console.log('running App...');
 ReactDOM.render(<App />, document.getElementById("app-container"));
