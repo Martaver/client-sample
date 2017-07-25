@@ -79,8 +79,6 @@ fuse.bundle("app")
   .hmr();
 
 fuse.bundle("vendor")
-  .instructions("~ index.dev.tsx")
-  .watch()
-  .hmr();
+  .instructions("~ index.dev.tsx");
 
 fuse.run();
