@@ -68,10 +68,10 @@ const fuse = new FuseBox({
   ],
 });
 
-fuse.bundle("app")
-  .instructions("!> [index.tsx]");
-
 fuse.bundle("vendor")
   .instructions("~ index.tsx");
+
+fuse.bundle("app")
+  .instructions("!> [index.tsx]");
 
 fuse.run();
