@@ -59,7 +59,8 @@ const fuse = new FuseBox({
       PostCSSPlugin(),
     ],
     // QuantumPlugin({
-    //   uglify: false
+    //   uglify: false,
+    //   removeExportsInterop: false,
     // }),
     WebIndexPlugin({
       title: "Portyr",
@@ -68,13 +69,13 @@ const fuse = new FuseBox({
   ],
 });
 
-// fuse.dev({port: 3000, root: false }, server => {
-//   const app = server.httpServer.app as express.Application;
-//   app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
-//   app.use("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
-//   });
-// });
+fuse.dev({port: 3000, root: false }, server => {
+  const app = server.httpServer.app as express.Application;
+  app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
+  app.use("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
+  });
+});
 
 fuse.bundle("app")
   .instructions(">index.tsx");
