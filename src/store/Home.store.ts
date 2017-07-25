@@ -5,7 +5,6 @@ import { QueryCompany, QueryResponse, Company } from "../types/portyr-api";
 import { combineEpics, ActionsObservable, Epic } from "redux-observable";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
-import "rxjs/add/operator/do";
 import { on } from "../tools/redux-observable-typescript";
 
 const actionCreator = actionCreatorFactory("HOME");
@@ -28,8 +27,6 @@ const INITIAL_STATE: HomeState = {
   searchResults: [],
 };
 
-type blah = typeof HomeActions.searchTextChanged;
-
 const Search = on(HomeActions.searchTextChanged)(action$ => action$
   .map(a => {
     const req = new QueryCompany();
@@ -48,7 +45,12 @@ export const HomeReducer = reducerWithInitialState(INITIAL_STATE)
     searchText: p.searchText
   }))
 
+  .case(HomeActions.sendSearch, (s, p) => ({...s,
+    isSearching: true
+  }))
+
   .case(HomeActions.receiveSearch, (s, p) => ({...s,
-    searchResults: p.results
+    searchResults: p.results,
+    isSearching: false
   }))
 ;

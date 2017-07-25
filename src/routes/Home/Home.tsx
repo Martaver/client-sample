@@ -12,19 +12,21 @@ import header from "./header-bg.png";
 
 import { FlatButton } from "material-ui";
 
+import { Creatable } from "react-select";
+
 
 interface HomeProps {
 
 }
 
 const mapStateToProps = (state: RootState, own: HomeProps) => ({
-  searchText: state.home.searchText,
-  results: state.home.searchResults,
+  ...state.home
 });
 
 const mapDispatchToProps = ({
   ...HomeActions,
   goFoo: () => push("/foo"),
+  goCompany: (id:number) => push(`/company/${id}`),
 });
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
@@ -40,16 +42,28 @@ export const Home = connect(mapStateToProps, mapDispatchToProps)(p => (
         <div className={styles.mainSearchResults}>
           <div className={styles.title}>Latest Searches</div>
           {
-            p.results.length > 0
+            p.searchResults.length > 0
             ? (
               <div>
-                {p.results.map(r => (<div key={r.id}>{r.name}</div>))}
+                {p.searchResults.map(r => (
+                  <div key={r.id} onClick={() => p.goCompany(r.id)}>
+                    <span>{r.name}</span>
+                  </div>
+                ))}
+              </div>
+            )
+            : p.searchText.length === 0 ? (
+              <div>
+                Start typing to find out what data companies collect.
+              </div>
+            )
+            : p.isSearching ? (
+              <div>
+                Searching...
               </div>
             )
             : (
-              <div>
-                No results
-              </div>
+              <div>No results...</div>
             )
           }
         </div>
