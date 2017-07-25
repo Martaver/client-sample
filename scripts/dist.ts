@@ -58,20 +58,25 @@ const fuse = new FuseBox({
       CSSPlugin(),
       PostCSSPlugin(),
     ],
+    // QuantumPlugin({
+    //   uglify: false
+    // }),
     WebIndexPlugin({
       title: "Portyr",
       template: `../${BUILD_PATH}index.html`
-    }),
-    // QuantumPlugin({
-    //   uglify: false
-    // })
+    })
   ],
 });
 
-fuse.bundle("vendor")
-  .instructions("~ index.tsx");
+// fuse.dev({port: 3000, root: false }, server => {
+//   const app = server.httpServer.app as express.Application;
+//   app.use(express.static(path.resolve(__dirname, `../${BUILD_PATH}`)));
+//   app.use("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, `../${BUILD_PATH}/index.html`));
+//   });
+// });
 
 fuse.bundle("app")
-  .instructions("!> [index.tsx]");
+  .instructions(">index.tsx");
 
 fuse.run();
